@@ -214,11 +214,12 @@ html.js.motore-ko #nomotore{display:block}
 <header class="hero">
   <div class="kicker">Strumento · Fibrillazione atriale · ESC 2024</div>
   <h1 class="headline">FA — anticoagulante: chi, quale molecola, quale dose</h1>
-  <p class="lede"><strong>Come si usa.</strong> Il passo 1 dice che FA è e le condizioni che decidono prima del punteggio — cardiomiopatia ipertrofica o amiloidosi, valvola meccanica, stenosi mitralica, rischio emorragico, gravidanza —, <strong>da confermare come valutate</strong>. Il passo 2 calcola il <strong>CHA₂DS₂-VA</strong> con le definizioni della Tab. 10, senza il sesso; il 3 ne ricava l'indicazione, il 4 la molecola. Il passo 5 porta peso, creatinina ed eGFR: la <strong>clearance di Cockcroft-Gault sul peso reale</strong> la calcola lo strumento, e con BMI ≥30 mette accanto quella sul peso aggiustato. Il passo 6 chiede i farmaci e i fattori che cambiano la dose. Il passo 7 dà la dose di ogni DOAC con il criterio che l'ha decisa, e il rene oltre la Tab. 11 dalle schede tecniche. Con una SCA o una PCI ci sono il Tool Antitrombotici SCA e il Tool DAPT. <strong>Azzera</strong>, in alto, ricomincia.</p>
+  <p class="lede"><strong>Come si usa.</strong> Il passo 1 dice che FA è e le condizioni che decidono prima del punteggio — una cardiomiopatia, valvola meccanica, stenosi mitralica, rischio emorragico, gravidanza —, <strong>da confermare come valutate</strong>. Il passo 2 calcola il <strong>CHA₂DS₂-VA</strong> con le definizioni della Tab. 10, senza il sesso; il 3 ne ricava l'indicazione, il 4 la molecola. Il passo 5 porta peso, creatinina ed eGFR: la <strong>clearance di Cockcroft-Gault sul peso reale</strong> la calcola lo strumento, e con BMI ≥30 mette accanto quella sul peso aggiustato. Il passo 6 chiede i farmaci e i fattori che cambiano la dose. Il passo 7 dà la dose di ogni DOAC con il criterio che l'ha decisa, e il rene oltre la Tab. 11 dalle schede tecniche. Con una SCA o una PCI ci sono il Tool Antitrombotici SCA e il Tool DAPT. <strong>Azzera</strong>, in alto, ricomincia.</p>
   <div class="meta-row">
     <span class="meta-chip"><strong>Fonte</strong> 2024 ESC Guidelines for the management of atrial fibrillation, versione corretta</span>
     <span class="meta-chip"><strong>Calcolo</strong> Tab. 10 e Rec. Table 6, p. 3342 · Fig. 9, p. 3343 · Rec. Table 7, p. 3344 · Tab. 11, p. 3345</span>
     <span class="meta-chip"><strong>Rene</strong> schede tecniche di Eliquis, Pradaxa, Lixiana e Xarelto, lette il 03/10/2026</span>
+    <span class="meta-chip"><strong>Cardiomiopatie</strong> ESC 2023, Rec. Table 11, pp. 3543–3544 · Tab. 15, p. 3542</span>
   </div>
 </header>
 
@@ -231,7 +232,7 @@ html.js.motore-ko #nomotore{display:block}
   <button class="btn" id="azzera" type="button">Azzera</button>
 </div>
 
-<div class="stage"><span class="stage-n">1</span><span class="stage-t">La FA, e ciò che decide prima del punteggio</span><span class="stage-w">Rec. Table 6, p. 3342 · Rec. Table 7, p. 3344</span></div>
+<div class="stage"><span class="stage-n">1</span><span class="stage-t">La FA, e ciò che decide prima del punteggio</span><span class="stage-w">Rec. Table 6, p. 3342 · Rec. Table 7, p. 3344 · ESC 2023, Rec. Table 11</span></div>
 <div class="card">
   <div class="riga"><span class="fl">Fibrillazione atriale</span>
     <span class="seg">
@@ -239,7 +240,14 @@ html.js.motore-ko #nomotore{display:block}
       <label><input type="radio" name="fa" value="sub"><span>subclinica da dispositivo</span></label>
     </span></div>
   <div class="muted" style="font-size:12.5px;margin:4px 0 4px">Parossistica, persistente o permanente non conta: il tipo temporale non decide l'anticoagulante. La subclinica è quella asintomatica, vista solo da un dispositivo impiantato.</div>
-  <label class="chk"><input type="checkbox" id="cmi"><span class="tx">Cardiomiopatia ipertrofica o amiloidosi cardiaca<small>anticoagulante a tutti, qualunque sia il punteggio</small></span></label>
+  <div class="riga"><span class="fl">Cardiomiopatia<small>ipertrofica o amiloidosi: anticoagulante a tutti; restrittiva: da considerare, qualunque sia il punteggio; le altre decidono col punteggio</small></span>
+    <span class="seg">
+      <label><input type="radio" name="cmp" value="no"><span>nessuna</span></label>
+      <label><input type="radio" name="cmp" value="hcm"><span>ipertrofica o amiloidosi</span></label>
+      <label><input type="radio" name="cmp" value="rcm"><span>restrittiva</span></label>
+      <label><input type="radio" name="cmp" value="altra"><span>dilatativa, NDLVC o ARVC</span></label>
+    </span></div>
+  <div class="muted" style="font-size:12.5px;margin:4px 0 4px">La FA ESC 2024 ha la sola riga dell'ipertrofica e dell'amiloidosi; restrittiva, dilatativa, NDLVC (ventricolo sinistro non dilatato) e ARVC (aritmogena del ventricolo destro) vengono dalla ESC 2023 sulle cardiomiopatie. Un'amiloidosi con fenotipo restrittivo va in «ipertrofica o amiloidosi»: la riga nomina l'amiloidosi. Non segnata, con la conferma qui sotto, vale «nessuna».</div>
   <label class="chk"><input type="checkbox" id="valv"><span class="tx">Valvola cardiaca meccanica<small>i DOAC si evitano: solo AVK</small></span></label>
   <label class="chk"><input type="checkbox" id="sm"><span class="tx">Stenosi mitralica moderata-severa<small>solo AVK. Bioprotesi (anche mitralica), TAVI, insufficienza mitralica e le altre valvulopatie non contano: lì il DOAC è preferito</small></span></label>
   <label class="chk"><input type="checkbox" id="emo"><span class="tx">Alto rischio emorragico<small>nella FA subclinica esclude il DOAC; per il dabigatran è un criterio di riduzione da valutare. Nella FA clinica non serve a negare l'anticoagulante</small></span></label>
@@ -322,7 +330,8 @@ html.js.motore-ko #nomotore{display:block}
 <div class="card"><h3>Limiti per questo paziente</h3><ul class="lista" id="limiti"></ul></div>
 
 <div class="foot">
-  <strong>Fonte.</strong> Van Gelder IC, Rienstra M, Bunting KV, et al. 2024 ESC Guidelines for the management of atrial fibrillation developed in collaboration with EACTS. <em>Eur Heart J</em> 2024;45:3314–3414, doi:10.1093/eurheartj/ehae176, nella versione corretta (Correction, <em>Eur Heart J</em> 2025;46:4349, doi:10.1093/eurheartj/ehaf306: Tab. 11 in µmol/L) — avvio dell'anticoagulante (p. 3341), definizioni del CHA₂DS₂-VA (Tab. 10, p. 3342), rischio tromboembolico (Rec. Table 6, p. 3342), interazioni (Fig. 9, p. 3343), DOAC, rene e valvole (§ 6.2.1, p. 3344), anticoagulanti orali (Rec. Table 7, p. 3344), AVK e FA subclinica (pp. 3345–3346), dosi dei DOAC (Tab. 11, p. 3345), antiaggreganti (Rec. Table 8, p. 3346), rischio emorragico (Rec. Table 12, p. 3348), anticoagulante con gli antiaggreganti (Rec. Table 24, p. 3366), gravidanza (Rec. Table 28, p. 3369). Schede tecniche lette il 03/10/2026: Eliquis, Pradaxa, Lixiana e Xarelto (EMA), Coumadin e Sintrom (AIFA). Ogni numero mostrato porta la pagina.<br><br>
+  <strong>Fonte.</strong> Van Gelder IC, Rienstra M, Bunting KV, et al. 2024 ESC Guidelines for the management of atrial fibrillation developed in collaboration with EACTS. <em>Eur Heart J</em> 2024;45:3314–3414, doi:10.1093/eurheartj/ehae176, nella versione corretta (Correction, <em>Eur Heart J</em> 2025;46:4349, doi:10.1093/eurheartj/ehaf306: Tab. 11 in µmol/L) — avvio dell'anticoagulante (p. 3341), definizioni del CHA₂DS₂-VA (Tab. 10, p. 3342), rischio tromboembolico (Rec. Table 6, p. 3342), interazioni (Fig. 9, p. 3343), DOAC, rene e valvole (§ 6.2.1, p. 3344), anticoagulanti orali (Rec. Table 7, p. 3344), AVK e FA subclinica (pp. 3345–3346), dosi dei DOAC (Tab. 11, p. 3345), antiaggreganti (Rec. Table 8, p. 3346), rischio emorragico (Rec. Table 12, p. 3348), anticoagulante con gli antiaggreganti (Rec. Table 24, p. 3366), gravidanza (Rec. Table 28, p. 3369). Schede tecniche lette il 03/10/2026: Eliquis, Pradaxa, Lixiana e Xarelto (EMA), Coumadin e Sintrom (AIFA).<br>
+  <strong>Cardiomiopatie.</strong> Arbelo E, Protonotarios A, Gimeno JR, et al. 2023 ESC Guidelines for the management of cardiomyopathies. <em>Eur Heart J</em> 2023;44:3503–3626, doi:10.1093/eurheartj/ehad194 — anticoagulante nelle cardiomiopatie (p. 3541; Rec. Table 11, pp. 3543–3544), la FA fenotipo per fenotipo (Tab. 15, p. 3542). Ogni numero mostrato porta la pagina.<br><br>
   Strumento personale di studio e consultazione: <strong>non sostituisce il giudizio clinico né la scheda tecnica del farmaco</strong>. Non salva i dati e non li invia in rete.
 </div>
 </div>
@@ -363,7 +372,23 @@ html.js.motore-ko #nomotore{display:block}
      Fig. 9, p. 3343 — interazioni (letta sull'immagine della pagina).
      Schede tecniche lette il 03/10/2026: Eliquis 4.2, 4.5; Pradaxa 4.2-4.5;
        Lixiana 4.2, 4.4, 4.5, 5.1; Xarelto 4.2, 4.5, 5.2; Coumadin 4.2, 4.4,
-       4.5; Sintrom 4.2, 4.3. */
+       4.5; Sintrom 4.2, 4.3.
+     2023 ESC Guidelines for the management of cardiomyopathies (decisione del
+     medico, 09/10/2026), lette sulla pagina:
+     Rec. Table 11, p. 3543 — HCM o amiloidosi cardiaca con FA o flutter:
+       anticoagulante a tutti, se non controindicato, I B (coincide con la
+       Rec. Table 6 della 2024); DCM, NDLVC o ARVC con CHA2DS2-VASc >=2
+       nell'uomo o >=3 nella donna I B.
+     Rec. Table 11, p. 3544 — RCM con FA o flutter: anticoagulante da
+       considerare, se non controindicato, IIa C (nessun punteggio); DCM,
+       NDLVC o ARVC con CHA2DS2-VASc 1 nell'uomo o 2 nella donna IIa B.
+       Il VASc e' il VA piu' un punto nella donna: le soglie coincidono con
+       VA >=2 e VA 1, e la decisione resta quella della 2024.
+     Tab. 15, p. 3542 — RCM «sempre, se non controindicato» (contro la IIa C);
+       DCM, NDLVC e ARVC «secondo il rischio cardioembolico, sempre con
+       scompenso o FEVS ridotta» (contro il punteggio).
+     p. 3541 — alla RCM e all'amiloidosi «una raccomandazione simile» a
+       quella della HCM. Nessuna riga sulla FA subclinica da dispositivo. */
   var SOGLIE = { a2:75, a1:65, apiEta:80, apiPeso:60, apiCrMg:1.5, apiCrUmol:133, dabiEta:80, dabiEtaCaso:75,
                  edoPeso:60, cl15:15, cl30:30, cl50:50, clAlta:100, bmiAgg:30, avk75:75, egfr30:30 };
   var UMOL = 88.4;   // umol/L per mg/dL di creatinina
@@ -428,6 +453,9 @@ html.js.motore-ko #nomotore{display:block}
       T11 = "ESC 2024, Tab. 11, p. 3345", F9 = "ESC 2024, Fig. 9, p. 3343", P41 = "ESC 2024, p. 3341", P44 = "ESC 2024, p. 3344",
       P45 = "ESC 2024, p. 3345", P46 = "ESC 2024, p. 3346", R8 = "ESC 2024, Rec. Table 8, p. 3346", R12 = "ESC 2024, Rec. Table 12, p. 3348",
       R24 = "ESC 2024, Rec. Table 24, p. 3366", R28 = "ESC 2024, Rec. Table 28, p. 3369", P69 = "ESC 2024, p. 3369";
+  var C11a = "ESC 2023 cardiomiopatie, Rec. Table 11, p. 3543", C11b = "ESC 2023 cardiomiopatie, Rec. Table 11, p. 3544",
+      C11 = "ESC 2023 cardiomiopatie, Rec. Table 11, pp. 3543–3544",
+      C15 = "ESC 2023 cardiomiopatie, Tab. 15, p. 3542", C41 = "ESC 2023 cardiomiopatie, p. 3541";
 
   /* ═══ FUNZIONI PURE ═══════════════════════════════════════════════════ */
   function r1(x) { return Math.round(x * 10) / 10; }
@@ -456,14 +484,18 @@ html.js.motore-ko #nomotore{display:block}
              perche:s.eta === null ? "serve l'età (passo 2)" : (!s.fatt ? "conferma i fattori del passo 2" : "") };
   }
 
-  // Rec. Table 6, p. 3342.
+  // Rec. Table 6, p. 3342; per le cardiomiopatie ESC 2023, Rec. Table 11,
+  // pp. 3543-3544. La restrittiva ha la sua IIa C qualunque sia il punteggio;
+  // con CHA2DS2-VA >=2 vale la I A della 2024, che riguarda ogni FA clinica.
+  // DCM, NDLVC e ARVC non cambiano la decisione: solo il confronto (testoInd).
   function indicazione(s, p) {
     if (!s.fa) return { e:null, perche:"serve il tipo di FA (passo 1)" };
     if (!s.cond) return { e:null, perche:"conferma le condizioni del passo 1" };
     if (s.grav) return { e:"grav" };
     if (s.fa === "clinica") {
-      if (s.cmi) return { e:"si", via:"cmi", c:"I", l:"B" };
+      if (s.cmp === "hcm") return { e:"si", via:"cmi", c:"I", l:"B" };
       if (p.tot >= 2) return { e:"si", via:"punti", c:"I", l:"A", almeno:!p.esatto };
+      if (s.cmp === "rcm") return { e:"forse", via:"rcm", c:"IIa", l:"C", almeno:!p.esatto };
       if (!p.esatto) return { e:null, perche:p.perche };
       if (p.tot === 1) return { e:"forse", c:"IIa", l:"C" };
       return { e:"zero" };
@@ -633,9 +665,10 @@ html.js.motore-ko #nomotore{display:block}
   function kPunti(n) { return n >= 2 ? "k4" : (n === 1 ? "k2" : "k0"); }
 
   function S() {
-    var ids = ["cmi", "valv", "sm", "emo", "grav", "cond", "pC", "pH", "pD", "pS", "pV", "fatt", "stab", "dial",
+    var ids = ["valv", "sm", "emo", "grav", "cond", "pC", "pH", "pD", "pS", "pV", "fatt", "stab", "dial",
                "verap", "amio", "drone", "ciclo", "eritro", "keto", "itra", "gi", "sca", "farm"], s = {}, i;
     for (i = 0; i < ids.length; i++) s[ids[i]] = ckv(ids[i]);
+    s.cmp = radio("cmp"); if (s.cmp === "no") s.cmp = "";
     s.fa = radio("fa"); s.ter = radio("ter") || "no"; s.ttr = radio("ttr"); s.sesso = radio("sesso"); s.ucr = radio("ucr") || "mg";
     s.eta = num("eta"); s.peso = num("peso"); s.alt = num("alt"); s.egfr = num("egfr");
     var cr = leggiCreat(num("creat"), s.ucr);
@@ -667,12 +700,21 @@ html.js.motore-ko #nomotore{display:block}
       nota("stop", "Nella FA in gravidanza a rischio tromboembolico elevato: anticoagulazione terapeutica con <b>EBPM o AVK</b>, l'AVK non nel primo trimestre né dalla 36ª settimana " + corPill("I", "C") + pgs(R28) + ". <b>I DOAC non sono raccomandati in gravidanza</b>, per la sicurezza" + pgs(P69) + ". Il rischio si valuta con le stesse regole che fuori dalla gravidanza" + pgs(P69) + "; le dosi la fonte non le dà.");
     if (ind.e === "si") {
       h += '<div class="esito"><span class="big">Anticoagulante raccomandato</span>' + corPill(ind.c, ind.l) + "</div>";
-      if (ind.via === "cmi") h += passo("FA con <b>cardiomiopatia ipertrofica o amiloidosi cardiaca</b>: anticoagulante a tutti, qualunque sia il punteggio " + corPill("I", "B") + pgs(R6) + ".", true);
-      else {
+      if (ind.via === "cmi") {
+        h += passo("FA con <b>cardiomiopatia ipertrofica o amiloidosi cardiaca</b>: anticoagulante a tutti, qualunque sia il punteggio " + corPill("I", "B") + pgs(R6) + ".", true);
+        h += passo("La ESC 2023 sulle cardiomiopatie dice lo stesso, con la stessa classe, anche per il flutter e se non controindicato " + corPill("I", "B") + pgs(C11a) + ": il punteggio stima male l'ictus nella HCM e nell'amiloidosi da transtiretina" + pgs(C41) + ".");
+      } else {
         h += passo("CHA₂DS₂-VA " + (ind.almeno ? "di almeno " : "") + p.tot + ": un punteggio di 2 o più indica un rischio tromboembolico elevato " + corPill("I", "C") + pgs(R6) + ".", true);
         h += passo("FA clinica a rischio elevato: anticoagulante orale per prevenire ictus e tromboembolia " + corPill("I", "A") + pgs(R6) + ".");
+        if (s.cmp === "rcm") h += passo("<b>Cardiomiopatia restrittiva</b>: la ESC 2023 dà l'anticoagulante da considerare qualunque sia il punteggio " + corPill("IIa", "C") + pgs(C11b) + "; qui il punteggio porta già alla classe I della 2024, che vale per ogni FA clinica a rischio elevato.");
         if (ind.almeno) h += nota("info", "Il punteggio esatto aspetta la conferma del passo 2, ma la classe non cambia: è già 2 o più.");
       }
+    } else if (ind.e === "forse" && ind.via === "rcm") {
+      h += '<div class="esito"><span class="big">Anticoagulante da considerare</span>' + corPill("IIa", "C") + "</div>";
+      h += passo("FA con <b>cardiomiopatia restrittiva</b>: anticoagulante da considerare, qualunque sia il punteggio, se non controindicato " + corPill("IIa", "C") + pgs(C11b) + ". La FA ESC 2024 non ha una riga per la restrittiva" + pgs(R6) + ": la classe è quella della ESC 2023.", true);
+      h += passo("È più bassa della I B dell'ipertrofica e dell'amiloidosi" + pgs(C11a) + ", e la tabella della stessa fonte dice «sempre»: vedi le incoerenze, in fondo.");
+      if (ind.almeno) h += nota("info", "Il punteggio esatto aspetta la conferma del passo 2: la IIa C vale comunque, e con 2 o più la classe sale alla I A della 2024" + pgs(R6) + ".");
+      else if (p.tot === 1) h += passo("Il CHA₂DS₂-VA 1 darebbe la stessa classe anche senza la cardiomiopatia " + corPill("IIa", "C") + pgs(R6) + ".");
     } else if (ind.e === "forse") {
       h += '<div class="esito"><span class="big">Anticoagulante da considerare</span>' + corPill("IIa", "C") + "</div>";
       h += passo("CHA₂DS₂-VA 1: va considerato un indicatore di rischio tromboembolico elevato " + corPill("IIa", "C") + pgs(R6) + ", con una decisione centrata sul paziente e condivisa" + pgs(P41) + ".", true);
@@ -694,9 +736,14 @@ html.js.motore-ko #nomotore{display:block}
       h += '<div class="esito"><span class="big">DOAC non indicato dal punteggio</span></div>';
       h += passo("CHA₂DS₂-VA 0: il rischio tromboembolico non risulta elevato, e la IIb B vale solo con rischio elevato" + pgs(R6) + ". Si pesano comunque gli altri modificatori (passo 2).", true);
     }
+    if (s.fa === "clinica" && s.cmp === "altra" && (ind.e === "si" || ind.e === "forse" || ind.e === "zero")) {
+      var c23 = p.tot >= 2 ? corPill("I", "B") + pgs(C11a) : (p.tot === 1 ? corPill("IIa", "B") + pgs(C11b) : "nessuna riga: la 2023 non dice di anticoagulare" + pgs(C11));
+      h += nota("info", "<b>Confronto · ESC 2023, cardiomiopatie.</b> Nella DCM, NDLVC o ARVC la 2023 decide con il CHA₂DS₂-VASc: anticoagulante raccomandato con ≥2 nell'uomo o ≥3 nella donna " + corPill("I", "B") + pgs(C11a) + ", da considerare con 1 nell'uomo o 2 nella donna " + corPill("IIa", "B") + pgs(C11b) + ". Il VASc è il VA con un punto in più nella donna: le soglie coincidono, e <b>la decisione resta quella del punteggio</b>; cambiano classe e livello. Qui CHA₂DS₂-VA " + (ind.almeno ? "di almeno " : "") + p.tot + " → nella 2023 " + c23 + ".");
+    }
     if (s.fa === "sub") {
       h += passo("Qualunque sia la scelta, la FA subclinica entra nel percorso AF-CARE completo: diventa FA clinica nel 6–9% l'anno" + pgs(P46) + ".");
-      if (s.cmi) h += nota("info", "Cardiomiopatia ipertrofica o amiloidosi: la I B parla di «FA»" + pgs(R6) + "; se valga anche per la subclinica da dispositivo la fonte non lo dice — «—», scelta clinica.");
+      if (s.cmp === "hcm") h += nota("info", "Cardiomiopatia ipertrofica o amiloidosi: la I B parla di «FA»" + pgs(R6) + ", e la ESC 2023 di «FA o flutter»" + pgs(C11a) + "; se valga anche per la subclinica da dispositivo nessuna delle due lo dice — «—», scelta clinica.");
+      else if (s.cmp) h += nota("info", (s.cmp === "rcm" ? "Cardiomiopatia restrittiva" : "DCM, NDLVC o ARVC") + ": le righe della ESC 2023 parlano di «FA o flutter»" + pgs(s.cmp === "rcm" ? C11b : C11) + ", e la subclinica da dispositivo non la nominano: qui vale la IIb B della FA ESC 2024.");
     } else {
       h += passo("Il tipo temporale — parossistica, persistente, permanente — non decide " + corPill("III", "B") + pgs(R6) + ".");
       h += passo("Un antiaggregante non sostituisce l'anticoagulante " + corPill("III", "A") + pgs(R6) + ": o si anticoagula, o non si dà niente e si rivaluta.");
@@ -873,11 +920,15 @@ html.js.motore-ko #nomotore{display:block}
     var tDab = doac && (dab.incoer === true || dab.incoer === "manca");
     for (i = 0; i < FARMACI.length; i++) { f = FARMACI[i]; if (s[f] && (f === "ciclo" || f === "drone" || f === "eritro" || f === "keto" || f === "itra")) qui.push(INTER[f].nome); }
     var tEdo = doac && qui.length > 0;
-    var tC = !!s.fa && !s.grav && !s.cmi && !s.pC && p.esatto && p.tot <= 1;
+    // con la restrittiva (FA clinica) 0 e 1 danno la stessa IIa C: il punto cambia la classe solo da 1
+    var tC = !!s.fa && !s.grav && s.cmp !== "hcm" && !s.pC && p.esatto && (s.cmp === "rcm" && s.fa === "clinica" ? p.tot === 1 : p.tot <= 1);
+    var tR = s.fa === "clinica" && !s.grav && s.cmp === "rcm", tA = s.fa === "clinica" && !s.grav && s.cmp === "altra";
     return inc(tDab, "<b>Dabigatran: eGFR o clearance?</b> Il testo lo controindica con eGFR &lt;30 mL/min/1,73 m²" + pgs(P44) + "; la Tab. 11 scrive il suo criterio renale in clearance della creatinina" + pgs(T11) + ", e la scheda tecnica la controindicazione in ClCr &lt;30 con Cockcroft-Gault" + pgs("scheda tecnica (Pradaxa 4.2, 4.3)") + ". Le due misure non coincidono, soprattutto nell'anziano e ai pesi estremi. Lo strumento prende la lettura più prudente: sotto 30 con l'una o con l'altra, niente dabigatran" +
         (dab.incoer === true && rn.cl.clcr !== null && rn.egfr !== null ? " — qui ClCr " + nf(rn.cl.clcr, 0) + " ed eGFR " + nf(rn.egfr, 0) + " cadono ai lati opposti di 30" : (dab.incoer === "manca" ? " — qui l'eGFR manca" : "")) + ".") +
       inc(tEdo, "<b>Edoxaban: Tab. 11 o Fig. 9?</b> La Tab. 11 scende a 30 mg con uno solo fra ciclosporina, dronedarone, eritromicina e ketoconazolo" + pgs(T11) + "; la Fig. 9 con il dronedarone dice «evitare o ridurre la dose», e con ciclosporina, eritromicina, ketoconazolo e itraconazolo «evitare o ridurre» solo se c'è un'altra terapia che interagisce" + pgs(F9) + ". La scheda tecnica, da cui la Tab. 11 dice di prendere le dosi, sta con la Tab. 11: basta uno solo dei quattro, e l'itraconazolo non lo nomina" + pgs("scheda tecnica (Lixiana 4.5)") + ". Lo strumento segue la Tab. 11" + (tEdo ? " — qui: " + qui.join(", ") : "") + ".") +
-      inc(tC, "<b>La C del CHA₂DS₂-VA.</b> Qui è lo scompenso sintomatico a qualunque FE, o una FEVS ≤40% asintomatica" + pgs(T10) + "; lo scompenso ESC 2026 la scrive come scompenso cronico negli stadi B, C e D, e lo stadio B, il pre-scompenso, va oltre la sola FEVS ≤40% asintomatica (scheda dello scompenso, sezione 9). Con un pre-scompenso a FEVS &gt;40% il punto c'è là e non qui. Lo strumento segue la Tab. 10" + (tC ? " — qui un punto in più cambierebbe la classe" : "") + ".");
+      inc(tC, "<b>La C del CHA₂DS₂-VA.</b> Qui è lo scompenso sintomatico a qualunque FE, o una FEVS ≤40% asintomatica" + pgs(T10) + "; lo scompenso ESC 2026 la scrive come scompenso cronico negli stadi B, C e D, e lo stadio B, il pre-scompenso, va oltre la sola FEVS ≤40% asintomatica (scheda dello scompenso, sezione 9). Con un pre-scompenso a FEVS &gt;40% il punto c'è là e non qui. Lo strumento segue la Tab. 10" + (tC ? " — qui un punto in più cambierebbe la classe" : "") + ".") +
+      inc(tR, "<b>Cardiomiopatia restrittiva: «sempre» o IIa C?</b> ESC 2023 sulle cardiomiopatie. La riga dà l'anticoagulante da considerare, IIa C" + pgs(C11b) + "; la Tab. 15 della stessa fonte lo scrive «sempre, se non controindicato», come per la HCM" + pgs(C15) + ", e il testo dice che alla restrittiva e all'amiloidosi si dà una raccomandazione simile a quella della HCM" + pgs(C41) + ". Tutte e tre portano all'anticoagulante: cambia la forza. Lo strumento segue la riga, IIa C, e con CHA₂DS₂-VA ≥2 la I A della 2024.") +
+      inc(tA, "<b>DCM, NDLVC, ARVC: punteggio o «sempre»?</b> ESC 2023 sulle cardiomiopatie. La riga decide col CHA₂DS₂-VASc" + pgs(C11) + "; la Tab. 15 aggiunge «sempre con scompenso o FEVS ridotta»" + pgs(C15) + ". Lo scompenso vale un punto: con quello soltanto si arriva alla IIa (C nella 2024, B nella 2023), non a un «sempre». Lo strumento segue le righe; la Tab. 15 non ha classe.");
   }
 
   function disegna() {
@@ -911,6 +962,7 @@ html.js.motore-ko #nomotore{display:block}
     lim.push("Le soglie si leggono sulla clearance arrotondata all'intero: 49,6 vale 50, e il rivaroxaban resta a 20 mg (15–49), mentre l'edoxaban scende a 30 (15–50).");
     lim.push("Le interazioni sono solo quelle dei sette farmaci del passo 6; il resto della Fig. 9 è nella scheda della FA, sezione 5.6.");
     if (s.fa === "sub") lim.push("Per la FA subclinica la fonte non dà una soglia di «rischio alto»: lo strumento usa l'indicatore della Rec. Table 6 (CHA₂DS₂-VA ≥2).");
+    if (s.cmp === "rcm" || s.cmp === "altra") lim.push("Restrittiva, dilatativa, NDLVC e ARVC vengono dalla ESC 2023 sulle cardiomiopatie (Rec. Table 11, pp. 3543–3544), che usa ancora il CHA₂DS₂-VASc; molecola, dose e rene restano quelli della FA ESC 2024: nelle cardiomiopatie non c'è un confronto randomizzato fra DOAC e AVK, e i dati suggeriscono di usarli come nella popolazione generale (ESC 2023, p. 3541).");
     lim.push("Non tratta il passaggio fra AVK e DOAC, la cardioversione, l'ablazione, gli interventi e il sanguinamento: sono nella scheda della FA.");
     el("limiti").innerHTML = "<li>" + lim.join("</li><li>") + "</li>";
 
