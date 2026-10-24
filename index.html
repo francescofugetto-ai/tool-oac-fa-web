@@ -214,12 +214,13 @@ html.js.motore-ko #nomotore{display:block}
 <header class="hero">
   <div class="kicker">Strumento · Fibrillazione atriale · ESC 2024</div>
   <h1 class="headline">FA — anticoagulante: chi, quale molecola, quale dose</h1>
-  <p class="lede"><strong>Come si usa.</strong> Il passo 1 dice che FA è e le condizioni che decidono prima del punteggio — una cardiomiopatia, valvola meccanica, stenosi mitralica, rischio emorragico, gravidanza —, <strong>da confermare come valutate</strong>. Il passo 2 calcola il <strong>CHA₂DS₂-VA</strong> con le definizioni della Tab. 10, senza il sesso; il 3 ne ricava l'indicazione, il 4 la molecola. Il passo 5 porta peso, creatinina ed eGFR: la <strong>clearance di Cockcroft-Gault sul peso reale</strong> la calcola lo strumento, e con BMI ≥30 mette accanto quella sul peso aggiustato. Il passo 6 chiede i farmaci e i fattori che cambiano la dose. Il passo 7 dà la dose di ogni DOAC con il criterio che l'ha decisa, e il rene oltre la Tab. 11 dalle schede tecniche. Con una SCA o una PCI ci sono il Tool Antitrombotici SCA e il Tool DAPT. <strong>Azzera</strong>, in alto, ricomincia.</p>
+  <p class="lede"><strong>Come si usa.</strong> Il passo 1 dice che FA è e le condizioni che decidono prima del punteggio — una cardiomiopatia, valvola meccanica, stenosi mitralica, rischio emorragico, gravidanza —, <strong>da confermare come valutate</strong>. Il passo 2 calcola il <strong>CHA₂DS₂-VA</strong> con le definizioni della Tab. 10, senza il sesso; il 3 ne ricava l'indicazione, il 4 la molecola, con due caselle per la ESC 2023 sull'endocardite: l'<strong>endocardite infettiva</strong>, e l'<strong>endocardite trombotica non batterica</strong> con la sindrome antifosfolipidica. Il passo 5 porta peso, creatinina ed eGFR: la <strong>clearance di Cockcroft-Gault sul peso reale</strong> la calcola lo strumento, e con BMI ≥30 mette accanto quella sul peso aggiustato. Il passo 6 chiede i farmaci e i fattori che cambiano la dose. Il passo 7 dà la dose di ogni DOAC con il criterio che l'ha decisa, e il rene oltre la Tab. 11 dalle schede tecniche. Con una SCA o una PCI ci sono il Tool Antitrombotici SCA e il Tool DAPT. <strong>Azzera</strong>, in alto, ricomincia.</p>
   <div class="meta-row">
     <span class="meta-chip"><strong>Fonte</strong> 2024 ESC Guidelines for the management of atrial fibrillation, versione corretta</span>
     <span class="meta-chip"><strong>Calcolo</strong> Tab. 10 e Rec. Table 6, p. 3342 · Fig. 9, p. 3343 · Rec. Table 7, p. 3344 · Tab. 11, p. 3345</span>
-    <span class="meta-chip"><strong>Rene</strong> schede tecniche di Eliquis, Pradaxa, Lixiana e Xarelto, lette il 03/10/2026</span>
+    <span class="meta-chip"><strong>Rene</strong> schede tecniche di apixaban, dabigatran, edoxaban e rivaroxaban (EMA), lette il 03/10/2026</span>
     <span class="meta-chip"><strong>Cardiomiopatie</strong> ESC 2023, Rec. Table 11, pp. 3543–3544 · Tab. 15, p. 3542</span>
+    <span class="meta-chip"><strong>Endocardite</strong> ESC 2023, Rec. Table 22 p. 4009 · § 9.1 p. 3991 · § 12.11–12.12 pp. 4009–4010</span>
   </div>
 </header>
 
@@ -271,8 +272,10 @@ html.js.motore-ko #nomotore{display:block}
 <div class="stage"><span class="stage-n">3</span><span class="stage-t">Chi si anticoagula</span><span class="stage-w">Rec. Table 6, p. 3342</span></div>
 <div class="card" id="outInd"></div>
 
-<div class="stage"><span class="stage-n">4</span><span class="stage-t">Quale molecola</span><span class="stage-w">Rec. Table 7, p. 3344</span></div>
+<div class="stage"><span class="stage-n">4</span><span class="stage-t">Quale molecola</span><span class="stage-w">Rec. Table 7, p. 3344 · ESC 2023 endocardite, Rec. Table 22, § 12.12</span></div>
 <div class="card">
+  <label class="chk"><input type="checkbox" id="ei"><span class="tx">Endocardite infettiva in corso o recente<small>ESC 2023: l'anticoagulante che ha già un'indicazione si continua, salvo sanguinamento maggiore e chirurgia probabile. «Recente»: la fonte non dà un tempo</small></span></label>
+  <label class="chk"><input type="checkbox" id="nbte"><span class="tx">Endocardite trombotica non batterica o sindrome antifosfolipidica trombotica<small>ESC 2023: eparina o AVK; per i DOAC nessun dato</small></span></label>
   <div class="riga"><span class="fl">Anticoagulante in corso</span>
     <span class="seg">
       <label><input type="radio" name="ter" value="no"><span>nessuno</span></label>
@@ -330,8 +333,9 @@ html.js.motore-ko #nomotore{display:block}
 <div class="card"><h3>Limiti per questo paziente</h3><ul class="lista" id="limiti"></ul></div>
 
 <div class="foot">
-  <strong>Fonte.</strong> Van Gelder IC, Rienstra M, Bunting KV, et al. 2024 ESC Guidelines for the management of atrial fibrillation developed in collaboration with EACTS. <em>Eur Heart J</em> 2024;45:3314–3414, doi:10.1093/eurheartj/ehae176, nella versione corretta (Correction, <em>Eur Heart J</em> 2025;46:4349, doi:10.1093/eurheartj/ehaf306: Tab. 11 in µmol/L) — avvio dell'anticoagulante (p. 3341), definizioni del CHA₂DS₂-VA (Tab. 10, p. 3342), rischio tromboembolico (Rec. Table 6, p. 3342), interazioni (Fig. 9, p. 3343), DOAC, rene e valvole (§ 6.2.1, p. 3344), anticoagulanti orali (Rec. Table 7, p. 3344), AVK e FA subclinica (pp. 3345–3346), dosi dei DOAC (Tab. 11, p. 3345), antiaggreganti (Rec. Table 8, p. 3346), rischio emorragico (Rec. Table 12, p. 3348), anticoagulante con gli antiaggreganti (Rec. Table 24, p. 3366), gravidanza (Rec. Table 28, p. 3369). Schede tecniche lette il 03/10/2026: Eliquis, Pradaxa, Lixiana e Xarelto (EMA), Coumadin e Sintrom (AIFA).<br>
-  <strong>Cardiomiopatie.</strong> Arbelo E, Protonotarios A, Gimeno JR, et al. 2023 ESC Guidelines for the management of cardiomyopathies. <em>Eur Heart J</em> 2023;44:3503–3626, doi:10.1093/eurheartj/ehad194 — anticoagulante nelle cardiomiopatie (p. 3541; Rec. Table 11, pp. 3543–3544), la FA fenotipo per fenotipo (Tab. 15, p. 3542). Ogni numero mostrato porta la pagina.<br><br>
+  <strong>Fonte.</strong> Van Gelder IC, Rienstra M, Bunting KV, et al. 2024 ESC Guidelines for the management of atrial fibrillation developed in collaboration with EACTS. <em>Eur Heart J</em> 2024;45:3314–3414, doi:10.1093/eurheartj/ehae176, nella versione corretta (Correction, <em>Eur Heart J</em> 2025;46:4349, doi:10.1093/eurheartj/ehaf306: Tab. 11 in µmol/L) — avvio dell'anticoagulante (p. 3341), definizioni del CHA₂DS₂-VA (Tab. 10, p. 3342), rischio tromboembolico (Rec. Table 6, p. 3342), interazioni (Fig. 9, p. 3343), DOAC, rene e valvole (§ 6.2.1, p. 3344), anticoagulanti orali (Rec. Table 7, p. 3344), AVK e FA subclinica (pp. 3345–3346), dosi dei DOAC (Tab. 11, p. 3345), antiaggreganti (Rec. Table 8, p. 3346), rischio emorragico (Rec. Table 12, p. 3348), anticoagulante con gli antiaggreganti (Rec. Table 24, p. 3366), gravidanza (Rec. Table 28, p. 3369). Schede tecniche lette il 03/10/2026, citate per principio attivo, con l'autorità e la data del documento: apixaban (EMA, 10/04/2026), dabigatran (EMA, 24/11/2025), edoxaban (EMA, 27/08/2025) e rivaroxaban (EMA, 22/09/2026); warfarin (AIFA, 09/04/2021) e acenocumarolo (AIFA, 04/09/2026).<br>
+  <strong>Cardiomiopatie.</strong> Arbelo E, Protonotarios A, Gimeno JR, et al. 2023 ESC Guidelines for the management of cardiomyopathies. <em>Eur Heart J</em> 2023;44:3503–3626, doi:10.1093/eurheartj/ehad194 — anticoagulante nelle cardiomiopatie (p. 3541; Rec. Table 11, pp. 3543–3544), la FA fenotipo per fenotipo (Tab. 15, p. 3542).<br>
+  <strong>Endocardite.</strong> Delgado V, Ajmone Marsan N, de Waha S, et al. 2023 ESC Guidelines for the management of endocarditis. <em>Eur Heart J</em> 2023;44:3948–4042, doi:10.1093/eurheartj/ehad193 — anticoagulante con un'indicazione preesistente (§ 9.1, p. 3991), antitrombotici nell'endocardite (§ 12.11 e Rec. Table 22, p. 4009), endocardite trombotica non batterica e sindrome antifosfolipidica (§ 12.12, pp. 4009–4010). Il percorso completo è nella scheda 13, endocardite. Il rene delle eparine, che la fonte non dà, viene dalle schede tecniche di enoxaparina (AIFA, 11/08/2026) e di eparina sodica (AIFA, revisione 23/02/2024), lette il 03/10/2026 come nel prontuario della scheda 10, e per l'eparina non frazionata anche dalla linea guida sulle valvulopatie, che la usa nel rene grave: Praz F, Borger MA, et al. 2025 ESC/EACTS Guidelines for the management of valvular heart disease. <em>Eur Heart J</em> 2025;46:4635–4736 — bridging nella CKD stadio IV–V (Tab. 11, p. 4694). Ogni numero mostrato porta la pagina.<br><br>
   Strumento personale di studio e consultazione: <strong>non sostituisce il giudizio clinico né la scheda tecnica del farmaco</strong>. Non salva i dati e non li invia in rete.
 </div>
 </div>
@@ -370,9 +374,12 @@ html.js.motore-ko #nomotore{display:block}
        dronedarone, eritromicina, ketoconazolo. Rivaroxaban 20 mg; 15 mg con
        ClCr 15-49. Nota: antiaggreganti sospesi nella maggior parte.
      Fig. 9, p. 3343 — interazioni (letta sull'immagine della pagina).
-     Schede tecniche lette il 03/10/2026: Eliquis 4.2, 4.5; Pradaxa 4.2-4.5;
-       Lixiana 4.2, 4.4, 4.5, 5.1; Xarelto 4.2, 4.5, 5.2; Coumadin 4.2, 4.4,
-       4.5; Sintrom 4.2, 4.3.
+     Schede tecniche lette il 03/10/2026, per principio attivo (autorita' e
+       data del documento): apixaban 4.2, 4.5 (EMA, 10/04/2026); dabigatran
+       4.2-4.5 (EMA, 24/11/2025); edoxaban 4.2, 4.4, 4.5, 5.1 (EMA,
+       27/08/2025); rivaroxaban 4.2, 4.5, 5.2 (EMA, 22/09/2026); warfarin
+       4.2, 4.4, 4.5 (AIFA, 09/04/2021); acenocumarolo 4.2, 4.3 (AIFA,
+       04/09/2026).
      2023 ESC Guidelines for the management of cardiomyopathies (decisione del
      medico, 09/10/2026), lette sulla pagina:
      Rec. Table 11, p. 3543 — HCM o amiloidosi cardiaca con FA o flutter:
@@ -388,7 +395,45 @@ html.js.motore-ko #nomotore{display:block}
        DCM, NDLVC e ARVC «secondo il rischio cardioembolico, sempre con
        scompenso o FEVS ridotta» (contro il punteggio).
      p. 3541 — alla RCM e all'amiloidosi «una raccomandazione simile» a
-       quella della HCM. Nessuna riga sulla FA subclinica da dispositivo. */
+       quella della HCM. Nessuna riga sulla FA subclinica da dispositivo.
+     2023 ESC Guidelines for the management of endocarditis (decisione del
+     medico del 10/10/2026), letta sulla pagina — vale solo con le caselle:
+     Rec. Table 22, p. 4009 — sanguinamento maggiore, emorragia intracranica
+       compresa: interrompere antiaggregante e anticoagulante I C; senza
+       ictus, con chirurgia probabile (es. S. aureus): OAC sostituito da UFH
+       sotto stretto monitoraggio IIa C; trombolisi III C.
+     § 9.1, p. 3991 — con un'indicazione preesistente l'anticoagulante si
+       continua nell'EI sinistra (testo, senza classe); eparina preferita con
+       sanguinamento cerebrale o chirurgia precoce.
+     § 12.11, p. 4009 — l'EI da sola non e' un'indicazione; nessun dato per
+       iniziare antitrombotici contro l'ictus; prove basse, Endocarditis Team;
+       il testo dice ponte con LMWH o UFH, la riga solo UFH.
+     § 12.12, pp. 4009-4010 — NBTE: curare la causa; anticoagulante da
+       considerare in tutti, pesato sul rischio emorragico (testo, senza
+       classe); con LMWH, AVK o UFH; nessun dato per i DOAC; nella sindrome
+       antifosfolipidica trombotica il rivaroxaban ha dato piu' tromboembolie e
+       piu' sanguinamenti maggiori del warfarin (RCT in aperto).
+     La FA ESC 2024 non nomina ne' l'endocardite ne' la sindrome
+     antifosfolipidica (cercato nel PDF il 10/10/2026).
+     Decisioni del medico del 23-24/10/2026: la preferenza del § 9.1 per
+       l'eparina con un sanguinamento cerebrale e' una nota d'incoerenza
+       (contro la Rec. Table 22: interruzione I C, ripresa con UFH IIa C solo
+       con valvola meccanica, che resta al Tool INR), non una condotta;
+       «si continua» solo con un'indicazione certa (passo 3); «recente» non ha
+       un tempo nella fonte; nessun nome commerciale nella pagina.
+     Rene delle eparine (prontuario della scheda 10, schede tecniche lette il
+       03/10/2026): enoxaparina § 4.2 (AIFA, 11/08/2026) — ClCr 30-80 nessun
+       aggiustamento, 15-30 una sola somministrazione al giorno, <15 non
+       raccomandata salvo emodialisi, formula non indicata; eparina sodica
+       § 4.2-4.4 (AIFA, revisione 23/02/2024) — nessun aggiustamento della
+       dose, «patologie renali gravi» fra le controindicazioni senza soglia,
+       potassio da controllare nella malattia renale cronica.
+     Decisioni del medico del 24/10/2026: D18, l'eparina non frazionata e'
+       quella del rene grave — la 2025 ESC/EACTS Guidelines for the management
+       of valvular heart disease la usa nella CKD stadio IV-V (Tab. 11,
+       p. 4694), come il Tool EP con ClCr <=30 — con accanto la
+       controindicazione della scheda tecnica; D20, il Tool INR si nomina e
+       non si linka. */
   var SOGLIE = { a2:75, a1:65, apiEta:80, apiPeso:60, apiCrMg:1.5, apiCrUmol:133, dabiEta:80, dabiEtaCaso:75,
                  edoPeso:60, cl15:15, cl30:30, cl50:50, clAlta:100, bmiAgg:30, avk75:75, egfr30:30 };
   var UMOL = 88.4;   // umol/L per mg/dL di creatinina
@@ -406,47 +451,47 @@ html.js.motore-ko #nomotore{display:block}
   var FARMACI = ["verap", "amio", "drone", "ciclo", "eritro", "keto", "itra"];
   var INTER = {
     verap: { nome:"verapamil",
-      avk:  { f9:"", st:"non nominato (Coumadin)" },
-      api:  { f9:"", st:"nessun aggiustamento (Eliquis 4.5)", liv:"" },
-      dabi: { f9:"distanziare o adattare la dose", st:"110 mg due volte al giorno, presi insieme al verapamil (Pradaxa 4.2)", liv:"rid" },
-      edo:  { f9:"", st:"nessuna riduzione (Lixiana 4.5)", liv:"" },
-      riva: { f9:"cautela se la funzione renale è ridotta", st:"non nominato (Xarelto 4.5)", liv:"" } },
+      avk:  { f9:"", st:"non nominato (warfarin)" },
+      api:  { f9:"", st:"nessun aggiustamento (apixaban, § 4.5)", liv:"" },
+      dabi: { f9:"distanziare o adattare la dose", st:"110 mg due volte al giorno, presi insieme al verapamil (dabigatran, § 4.2)", liv:"rid" },
+      edo:  { f9:"", st:"nessuna riduzione (edoxaban, § 4.5)", liv:"" },
+      riva: { f9:"cautela se la funzione renale è ridotta", st:"non nominato (rivaroxaban, § 4.5)", liv:"" } },
     amio: { nome:"amiodarone",
-      avk:  { f9:"ridurre la dose del warfarin", st:"aumenta l'INR, da controllare più spesso (Coumadin 4.5)" },
-      api:  { f9:"", st:"nessun aggiustamento (Eliquis 4.5)", liv:"" },
-      dabi: { f9:"distanziare o adattare la dose", st:"nessun aggiustamento, con cautela (Pradaxa 4.2, 4.5)", liv:"" },
-      edo:  { f9:"", st:"nessuna riduzione (Lixiana 4.5)", liv:"" },
-      riva: { f9:"", st:"non nominato in 4.5 (Xarelto)", liv:"" } },
+      avk:  { f9:"ridurre la dose del warfarin", st:"aumenta l'INR, da controllare più spesso (warfarin, § 4.5)" },
+      api:  { f9:"", st:"nessun aggiustamento (apixaban, § 4.5)", liv:"" },
+      dabi: { f9:"distanziare o adattare la dose", st:"nessun aggiustamento, con cautela (dabigatran, § 4.2, 4.5)", liv:"" },
+      edo:  { f9:"", st:"nessuna riduzione (edoxaban, § 4.5)", liv:"" },
+      riva: { f9:"", st:"non nominato in 4.5 (rivaroxaban)", liv:"" } },
     drone: { nome:"dronedarone",
-      avk:  { f9:"controllare l'INR con attenzione", st:"non nominato (Coumadin)" },
-      api:  { f9:"", st:"non nominato (Eliquis)", liv:"" },
-      dabi: { f9:"evitare quando si può", st:"controindicato (Pradaxa 4.3)", liv:"ci" },
-      edo:  { f9:"evitare o ridurre la dose", st:"30 mg (Lixiana 4.5)", liv:"rid" },
-      riva: { f9:"evitare quando si può", st:"da evitare (Xarelto 4.5)", liv:"ev" } },
+      avk:  { f9:"controllare l'INR con attenzione", st:"non nominato (warfarin)" },
+      api:  { f9:"", st:"non nominato (apixaban)", liv:"" },
+      dabi: { f9:"evitare quando si può", st:"controindicato (dabigatran, § 4.3)", liv:"ci" },
+      edo:  { f9:"evitare o ridurre la dose", st:"30 mg (edoxaban, § 4.5)", liv:"rid" },
+      riva: { f9:"evitare quando si può", st:"da evitare (rivaroxaban, § 4.5)", liv:"ev" } },
     ciclo: { nome:"ciclosporina",
-      avk:  { f9:"", st:"riduce l'INR, da controllare più spesso (Coumadin 4.5)" },
-      api:  { f9:"", st:"non nominata (Eliquis)", liv:"" },
-      dabi: { f9:"evitare quando si può", st:"controindicata (Pradaxa 4.3)", liv:"ci" },
-      edo:  { f9:"evitare o ridurre la dose se c'è un'altra terapia che interagisce", st:"30 mg (Lixiana 4.5)", liv:"rid" },
-      riva: { f9:"cautela se la funzione renale è ridotta", st:"non nominata (Xarelto 4.5)", liv:"" } },
+      avk:  { f9:"", st:"riduce l'INR, da controllare più spesso (warfarin, § 4.5)" },
+      api:  { f9:"", st:"non nominata (apixaban)", liv:"" },
+      dabi: { f9:"evitare quando si può", st:"controindicata (dabigatran, § 4.3)", liv:"ci" },
+      edo:  { f9:"evitare o ridurre la dose se c'è un'altra terapia che interagisce", st:"30 mg (edoxaban, § 4.5)", liv:"rid" },
+      riva: { f9:"cautela se la funzione renale è ridotta", st:"non nominata (rivaroxaban, § 4.5)", liv:"" } },
     eritro: { nome:"eritromicina",
-      avk:  { f9:"controllare l'INR con attenzione (macrolidi)", st:"aumenta l'INR, da controllare più spesso (Coumadin 4.5)" },
-      api:  { f9:"", st:"non nominata (Eliquis)", liv:"" },
-      dabi: { f9:"", st:"non nominata (Pradaxa)", liv:"" },
-      edo:  { f9:"evitare o ridurre la dose se c'è un'altra terapia che interagisce", st:"30 mg (Lixiana 4.5)", liv:"rid" },
-      riva: { f9:"cautela se la funzione renale è ridotta", st:"non rilevante nella maggior parte dei pazienti, potenzialmente significativa in quelli ad alto rischio (Xarelto 4.5)", liv:"" } },
+      avk:  { f9:"controllare l'INR con attenzione (macrolidi)", st:"aumenta l'INR, da controllare più spesso (warfarin, § 4.5)" },
+      api:  { f9:"", st:"non nominata (apixaban)", liv:"" },
+      dabi: { f9:"", st:"non nominata (dabigatran)", liv:"" },
+      edo:  { f9:"evitare o ridurre la dose se c'è un'altra terapia che interagisce", st:"30 mg (edoxaban, § 4.5)", liv:"rid" },
+      riva: { f9:"cautela se la funzione renale è ridotta", st:"non rilevante nella maggior parte dei pazienti, potenzialmente significativa in quelli ad alto rischio (rivaroxaban, § 4.5)", liv:"" } },
     keto: { nome:"ketoconazolo",
-      avk:  { f9:"", st:"aumenta l'INR, da controllare più spesso (Coumadin 4.5)" },
-      api:  { f9:"evitare quando si può", st:"non raccomandato (Eliquis 4.5)", liv:"ev" },
-      dabi: { f9:"evitare quando si può", st:"controindicato (Pradaxa 4.3)", liv:"ci" },
-      edo:  { f9:"evitare o ridurre la dose se c'è un'altra terapia che interagisce", st:"30 mg (Lixiana 4.5)", liv:"rid" },
-      riva: { f9:"evitare quando si può", st:"sconsigliato (Xarelto 4.5)", liv:"ev" } },
+      avk:  { f9:"", st:"aumenta l'INR, da controllare più spesso (warfarin, § 4.5)" },
+      api:  { f9:"evitare quando si può", st:"non raccomandato (apixaban, § 4.5)", liv:"ev" },
+      dabi: { f9:"evitare quando si può", st:"controindicato (dabigatran, § 4.3)", liv:"ci" },
+      edo:  { f9:"evitare o ridurre la dose se c'è un'altra terapia che interagisce", st:"30 mg (edoxaban, § 4.5)", liv:"rid" },
+      riva: { f9:"evitare quando si può", st:"sconsigliato (rivaroxaban, § 4.5)", liv:"ev" } },
     itra: { nome:"itraconazolo",
-      avk:  { f9:"", st:"aumenta l'INR, da controllare più spesso (Coumadin 4.5)" },
-      api:  { f9:"evitare quando si può", st:"non raccomandato (Eliquis 4.5)", liv:"ev" },
-      dabi: { f9:"evitare quando si può", st:"controindicato (Pradaxa 4.3)", liv:"ci" },
-      edo:  { f9:"evitare o ridurre la dose se c'è un'altra terapia che interagisce", st:"non nominato (Lixiana), e la Tab. 11 non lo elenca: nessuna riduzione", liv:"" },
-      riva: { f9:"evitare quando si può", st:"sconsigliato (Xarelto 4.5)", liv:"ev" } }
+      avk:  { f9:"", st:"aumenta l'INR, da controllare più spesso (warfarin, § 4.5)" },
+      api:  { f9:"evitare quando si può", st:"non raccomandato (apixaban, § 4.5)", liv:"ev" },
+      dabi: { f9:"evitare quando si può", st:"controindicato (dabigatran, § 4.3)", liv:"ci" },
+      edo:  { f9:"evitare o ridurre la dose se c'è un'altra terapia che interagisce", st:"non nominato (edoxaban), e la Tab. 11 non lo elenca: nessuna riduzione", liv:"" },
+      riva: { f9:"evitare quando si può", st:"sconsigliato (rivaroxaban, § 4.5)", liv:"ev" } }
   };
 
   var T10 = "ESC 2024, Tab. 10, p. 3342", R6 = "ESC 2024, Rec. Table 6, p. 3342", R7 = "ESC 2024, Rec. Table 7, p. 3344",
@@ -456,6 +501,15 @@ html.js.motore-ko #nomotore{display:block}
   var C11a = "ESC 2023 cardiomiopatie, Rec. Table 11, p. 3543", C11b = "ESC 2023 cardiomiopatie, Rec. Table 11, p. 3544",
       C11 = "ESC 2023 cardiomiopatie, Rec. Table 11, pp. 3543–3544",
       C15 = "ESC 2023 cardiomiopatie, Tab. 15, p. 3542", C41 = "ESC 2023 cardiomiopatie, p. 3541";
+  var E22 = "ESC 2023 endocardite, Rec. Table 22, p. 4009", E91 = "ESC 2023 endocardite, § 9.1, p. 3991",
+      E1211 = "ESC 2023 endocardite, § 12.11, p. 4009", E12a = "ESC 2023 endocardite, § 12.12, p. 4009",
+      E12b = "ESC 2023 endocardite, § 12.12, p. 4010", E12 = "ESC 2023 endocardite, § 12.12, pp. 4009–4010";
+  // Rene delle eparine (regola 5 del progetto): la fonte non lo da'. Lo danno
+  // la ESC/EACTS 2025 sulle valvulopatie per l'eparina non frazionata (D18,
+  // 24/10/2026) e le schede tecniche del prontuario della scheda 10 (lette il
+  // 03/10/2026).
+  var STU = "scheda tecnica di eparina sodica, § 4.2–4.4", STE = "scheda tecnica di enoxaparina, § 4.2",
+      V11 = "ESC/EACTS 2025 valvulopatie, Tab. 11, p. 4694";
 
   /* ═══ FUNZIONI PURE ═══════════════════════════════════════════════════ */
   function r1(x) { return Math.round(x * 10) / 10; }
@@ -507,15 +561,19 @@ html.js.motore-ko #nomotore{display:block}
     return { e:"subzero" };
   }
 
-  // Rec. Table 7, p. 3344.
+  // Rec. Table 7, p. 3344. Con la NBTE o la sindrome antifosfolipidica
+  // trombotica (ESC 2023 endocardite, § 12.12, p. 4010) niente DOAC: AVK con
+  // valvola meccanica o stenosi mitralica, altrimenti AVK o eparina; la NBTE
+  // porta un'indicazione sua, e la FA subclinica non resta senza molecola.
   function molecola(s) {
     if (!s.fa) return { m:null, perche:"serve il tipo di FA (passo 1)" };
     if (!s.cond) return { m:null, perche:"conferma le condizioni del passo 1" };
     if (s.grav) return { m:"grav" };
     if (s.valv || s.sm) {
-      if (s.fa === "sub") return { m:null, perche:"FA subclinica con valvola meccanica o stenosi mitralica: la IIb B parla di un DOAC, che qui non si usa, e la fonte non dà un'alternativa" };
-      return { m:"avk", valv:s.valv, sm:s.sm };
+      if (s.fa === "sub" && !s.nbte) return { m:null, perche:"FA subclinica con valvola meccanica o stenosi mitralica: la IIb B parla di un DOAC, che qui non si usa, e la fonte non dà un'alternativa" };
+      return { m:"avk", valv:s.valv, sm:s.sm, nbte:!!s.nbte };
     }
+    if (s.nbte) return { m:"nbte", ter:s.ter, ttr:s.ttr };
     if (s.fa === "sub") return { m:"doac", sub:true };
     if (s.ter === "avk") {
       if (!s.ttr) return { m:null, perche:"in AVK serve sapere se il TTR è sopra o sotto il 70%" };
@@ -579,10 +637,10 @@ html.js.motore-ko #nomotore{display:block}
 
   function apixaban(s, rn) {
     var o = nuovo("api", s), c, t = [];
-    if (rn.dialisi) return escludi(o, "nr", "In dialisi: non raccomandato, per mancanza di esperienza clinica", "scheda tecnica (Eliquis 4.2)");
+    if (rn.dialisi) return escludi(o, "nr", "In dialisi: non raccomandato, per mancanza di esperienza clinica", "scheda tecnica di apixaban, § 4.2");
     if (rn.cl.clcr === null) return serveCl(o, rn);
     c = arr(rn.cl.clcr);
-    if (c < SOGLIE.cl15) return escludi(o, "nr", "ClCr <15: non raccomandato, per mancanza di esperienza clinica", "scheda tecnica (Eliquis 4.2)");
+    if (c < SOGLIE.cl15) return escludi(o, "nr", "ClCr <15: non raccomandato, per mancanza di esperienza clinica", "scheda tecnica di apixaban, § 4.2");
     o.tre = [s.eta >= SOGLIE.apiEta, s.peso <= SOGLIE.apiPeso, s.ucr === "umol" ? s.creat >= SOGLIE.apiCrUmol : s.creat >= SOGLIE.apiCrMg];
     if (o.tre[0]) t.push("età ≥80 anni");
     if (o.tre[1]) t.push("peso ≤60 kg");
@@ -590,7 +648,7 @@ html.js.motore-ko #nomotore{display:block}
     o.crit = t;
     if (!s.farm) return serveFarm(o);
     o.evita = o.inter.ev.length > 0;
-    if (c < SOGLIE.cl30) { o.stato = "ridotta"; o.viaCl = true; o.fonte = "scheda tecnica (Eliquis 4.2)"; return o; }
+    if (c < SOGLIE.cl30) { o.stato = "ridotta"; o.viaCl = true; o.fonte = "scheda tecnica di apixaban, § 4.2"; return o; }
     o.stato = t.length >= 2 ? "ridotta" : "piena"; o.fonte = T11;
     return o;
   }
@@ -599,14 +657,14 @@ html.js.motore-ko #nomotore{display:block}
   // (testo, p. 3344) niente dabigatran.
   function dabigatran(s, rn) {
     var o = nuovo("dabi", s), c, rac = [], caso = [];
-    if (rn.dialisi) return escludi(o, "ci", "In dialisi (ClCr <30): controindicato", "scheda tecnica (Pradaxa 4.3)");
+    if (rn.dialisi) return escludi(o, "ci", "In dialisi (ClCr <30): controindicato", "scheda tecnica di dabigatran, § 4.3");
     if (rn.cl.clcr === null) return serveCl(o, rn);
     c = arr(rn.cl.clcr);
-    if (c < SOGLIE.cl30) { o.incoer = rn.egfr !== null && rn.egfr >= SOGLIE.egfr30; return escludi(o, "ci", "ClCr <30: controindicato", "scheda tecnica (Pradaxa 4.3)"); }
+    if (c < SOGLIE.cl30) { o.incoer = rn.egfr !== null && rn.egfr >= SOGLIE.egfr30; return escludi(o, "ci", "ClCr <30: controindicato", "scheda tecnica di dabigatran, § 4.3"); }
     if (rn.egfr === null) { o.incoer = "manca"; o.perche = "serve l'eGFR: il testo della fonte lo controindica con eGFR <30 (p. 3344)"; return o; }
     if (rn.egfr < SOGLIE.egfr30) { o.incoer = true; return escludi(o, "ci", "eGFR <30: controindicato secondo il testo della fonte, anche con ClCr ≥30 (lettura prudente)", P44); }
     if (!s.farm) return serveFarm(o);
-    if (o.inter.ci.length) return escludi(o, "ci", "Controindicato con " + o.inter.ci.join(", "), "scheda tecnica (Pradaxa 4.3)");
+    if (o.inter.ci.length) return escludi(o, "ci", "Controindicato con " + o.inter.ci.join(", "), "scheda tecnica di dabigatran, § 4.3");
     if (s.eta >= SOGLIE.dabiEta) rac.push("età ≥80 anni");
     if (s.verap) rac.push("verapamil in corso");
     if (rac.length) { o.stato = "ridotta"; o.crit = rac; o.fonte = T11; return o; }
@@ -620,10 +678,10 @@ html.js.motore-ko #nomotore{display:block}
 
   function edoxaban(s, rn) {
     var o = nuovo("edo", s), c, t = [];
-    if (rn.dialisi) return escludi(o, "nr", "In dialisi: non raccomandato", "scheda tecnica (Lixiana 4.2)");
+    if (rn.dialisi) return escludi(o, "nr", "In dialisi: non raccomandato", "scheda tecnica di edoxaban, § 4.2");
     if (rn.cl.clcr === null) return serveCl(o, rn);
     c = arr(rn.cl.clcr);
-    if (c < SOGLIE.cl15) return escludi(o, "nr", "ClCr <15: non raccomandato", "scheda tecnica (Lixiana 4.2)");
+    if (c < SOGLIE.cl15) return escludi(o, "nr", "ClCr <15: non raccomandato", "scheda tecnica di edoxaban, § 4.2");
     if (c <= SOGLIE.cl50) t.push("ClCr 15–50");
     if (s.peso <= SOGLIE.edoPeso) t.push("peso ≤60 kg");
     if (s.farm && o.inter.rid.length) t.push(o.inter.rid.join(", ") + " in corso");
@@ -637,10 +695,10 @@ html.js.motore-ko #nomotore{display:block}
 
   function rivaroxaban(s, rn) {
     var o = nuovo("riva", s), c;
-    if (rn.dialisi) return escludi(o, "nr", "In dialisi (ClCr <15): sconsigliato, e non è dializzabile", "scheda tecnica (Xarelto 4.2, 5.2)");
+    if (rn.dialisi) return escludi(o, "nr", "In dialisi (ClCr <15): sconsigliato, e non è dializzabile", "scheda tecnica di rivaroxaban, § 4.2, 5.2");
     if (rn.cl.clcr === null) return serveCl(o, rn);
     c = arr(rn.cl.clcr);
-    if (c < SOGLIE.cl15) return escludi(o, "nr", "ClCr <15: sconsigliato", "scheda tecnica (Xarelto 4.2)");
+    if (c < SOGLIE.cl15) return escludi(o, "nr", "ClCr <15: sconsigliato", "scheda tecnica di rivaroxaban, § 4.2");
     if (!s.farm) return serveFarm(o);
     o.evita = o.inter.ev.length > 0; o.fonte = T11;
     if (c < SOGLIE.cl50) { o.stato = "ridotta"; o.crit = ["ClCr 15–49"]; o.cautela = c < SOGLIE.cl30; return o; }
@@ -666,7 +724,7 @@ html.js.motore-ko #nomotore{display:block}
 
   function S() {
     var ids = ["valv", "sm", "emo", "grav", "cond", "pC", "pH", "pD", "pS", "pV", "fatt", "stab", "dial",
-               "verap", "amio", "drone", "ciclo", "eritro", "keto", "itra", "gi", "sca", "farm"], s = {}, i;
+               "verap", "amio", "drone", "ciclo", "eritro", "keto", "itra", "gi", "sca", "farm", "ei", "nbte"], s = {}, i;
     for (i = 0; i < ids.length; i++) s[ids[i]] = ckv(ids[i]);
     s.cmp = radio("cmp"); if (s.cmp === "no") s.cmp = "";
     s.fa = radio("fa"); s.ter = radio("ter") || "no"; s.ttr = radio("ttr"); s.sesso = radio("sesso"); s.ucr = radio("ucr") || "mg";
@@ -748,13 +806,14 @@ html.js.motore-ko #nomotore{display:block}
       h += passo("Il tipo temporale — parossistica, persistente, permanente — non decide " + corPill("III", "B") + pgs(R6) + ".");
       h += passo("Un antiaggregante non sostituisce l'anticoagulante " + corPill("III", "A") + pgs(R6) + ": o si anticoagula, o non si dà niente e si rivaluta.");
     }
+    if (s.nbte) h += nota("info", "<b>NBTE · ESC 2023 endocardite</b> (casella al passo 4). Con un'endocardite trombotica non batterica l'anticoagulante va considerato in tutti, qualunque sia il punteggio, pesato sul rischio emorragico del singolo" + pgs(E12 + ", testo senza classe") + "; e si cura la causa — lupus, tumore —, decisiva contro le recidive" + pgs(E12a) + ". Per la sola sindrome antifosfolipidica la ESC 2023 non dice chi anticoagulare: decide la FA." + (s.fa === "sub" ? " La IIb B della FA subclinica parla di un DOAC: qui la molecola è l'AVK o l'eparina (passo 4)." : ""));
     return h;
   }
 
   function avkTesto(s) {
     var h = "", i, f, d;
-    h += passo("<b>Warfarin</b>: dose titolata sull'INR, che la fonte non dà. Inizio 2,5–5 mg al giorno senza carico, mantenimento per lo più 2,5–10 mg al giorno" + pgs("scheda tecnica (Coumadin 4.2)") + ". Rene: nessun aggiustamento, INR più frequente; calcifilassi soprattutto in dialisi" + pgs("scheda tecnica (Coumadin 4.2, 4.4)") + ".");
-    h += passo("<b>Acenocumarolo</b>: inizio 2–4 mg al giorno senza carico (o 6 mg il primo giorno e 4 mg il secondo), mantenimento 1–8 mg al giorno" + pgs("scheda tecnica (Sintrom 4.2)") + ". Rene: controindicato nella compromissione renale grave, senza una soglia" + pgs("scheda tecnica (Sintrom 4.2, 4.3)") + " " + dv() + " la soglia di «grave».");
+    h += passo("<b>Warfarin</b>: dose titolata sull'INR, che la fonte non dà. Inizio 2,5–5 mg al giorno senza carico, mantenimento per lo più 2,5–10 mg al giorno" + pgs("scheda tecnica di warfarin, § 4.2") + ". Rene: nessun aggiustamento, INR più frequente; calcifilassi soprattutto in dialisi" + pgs("scheda tecnica di warfarin, § 4.2, 4.4") + ".");
+    h += passo("<b>Acenocumarolo</b>: inizio 2–4 mg al giorno senza carico (o 6 mg il primo giorno e 4 mg il secondo), mantenimento 1–8 mg al giorno" + pgs("scheda tecnica di acenocumarolo, § 4.2") + ". Rene: controindicato nella compromissione renale grave, senza una soglia" + pgs("scheda tecnica di acenocumarolo, § 4.2, 4.3") + " " + dv() + " la soglia di «grave».");
     for (i = 0; i < FARMACI.length; i++) {
       f = FARMACI[i];
       if (!s[f]) continue;
@@ -764,15 +823,68 @@ html.js.motore-ko #nomotore{display:block}
     return h;
   }
 
+  // Endocardite infettiva (ESC 2023): accanto alla molecola della 2024, che vale
+  // per l'anticoagulante orale che si continua. Il tool non chiede se c'e' un
+  // sanguinamento maggiore, un ictus o una chirurgia probabile: i rami si
+  // mostrano ciascuno con la sua condizione.
+  // Rene delle eparine, come nel Tool EP: la relazione con la clearance accanto
+  // al farmaco, con la sua fonte. La FA ESC 2024 e la ESC 2023 tacciono:
+  // l'eparina non frazionata e' quella del rene grave della ESC/EACTS 2025
+  // (D18, decisione del medico del 24/10/2026, come i Tool INR e
+  // Antitrombotici), con accanto la scheda tecnica; l'EBPM dalla sua scheda.
+  function reneUFH() {
+    return "<b>eparina non frazionata</b>: è l'eparina del rene grave, quella che la ESC/EACTS 2025 sulle valvulopatie usa nella CKD stadio IV–V" + pgs(V11) + "; accanto, la scheda tecnica non dà un aggiustamento della dose, ma mette fra le controindicazioni le «patologie renali gravi», senza una soglia, e chiede di controllare il potassio nella malattia renale cronica" + pgs(STU) + " " + dv() + " la soglia di «grave»";
+  }
+  function reneEBPM() {
+    return "<b>EBPM</b>, nella scheda dell'enoxaparina: ClCr 30–80 nessun aggiustamento; 15–30 una sola somministrazione al giorno; sotto 15 non raccomandata, salvo l'emodialisi; la scheda non dice con quale formula stimare la clearance" + pgs(STE);
+  }
+
+  // «Si continua» (§ 9.1) vale per l'anticoagulante che ha gia' un'indicazione:
+  // qui la FA la da' quando il passo 3 e' «raccomandato» o, nella subclinica,
+  // «DOAC da considerare» (decisione del medico, 24/10/2026).
+  function testoEI(ind) {
+    var certa = ind.e === "si" || ind.e === "subsi";
+    var h = '<div class="esito">' + chip("k3", "endocardite infettiva · ESC 2023") + "</div>";
+    h += passo("<b>Sanguinamento maggiore</b>, emorragia intracranica compresa: <b>interrompere</b> l'anticoagulante, e l'antiaggregante se c'è " + corPill("I", "C") + pgs(E22) + ". Sul passaggio all'eparina dopo un sanguinamento cerebrale la fonte è incoerente: vedi le incoerenze, in fondo.", true);
+    h += passo("Senza ictus, se la <b>chirurgia è probabile</b> (per esempio endocardite da <i>S. aureus</i>): l'anticoagulante orale, DOAC o AVK, lascia il posto all'<b>eparina non frazionata</b>, sotto stretto monitoraggio " + corPill("IIa", "C") + pgs(E22) + ".", true);
+    if (certa) h += passo("Altrimenti, nell'endocardite sinistra, l'anticoagulante che aveva già un'indicazione — qui la FA — <b>si continua</b>, se non ci sono altre controindicazioni" + pgs(E91 + ", testo senza classe") + ".");
+    else h += passo("Altrimenti, nell'endocardite sinistra, l'anticoagulante si continua <b>solo se ha già un'indicazione</b>, e se non ci sono altre controindicazioni" + pgs(E91 + ", testo senza classe") + ": qui la FA " + (ind.e ? "non dà un'indicazione certa" : "non ha ancora un'indicazione decisa") + " (passo 3).");
+    h += passo("L'endocardite da sola non è un'indicazione all'anticoagulante, e nessun dato sostiene di iniziarlo per curare o prevenire l'ictus dell'endocardite" + pgs(E1211) + ". Se la FA è nuova e l'anticoagulante non c'era, la ESC 2023 non dice se cominciarlo durante l'endocardite: prove di livello basso, si decide nell'Endocarditis Team" + pgs(E1211) + ".");
+    h += passo("Trombolisi: <b>no</b> " + corPill("III", "C") + pgs(E22) + ".");
+    h += nota("info", "<b>Dove la ESC 2023 tace.</b> Fra DOAC e AVK durante l'endocardite non sceglie, e la dose dell'eparina non la dà " + dv() + ": molecola e dosi qui sotto sono quelle della FA ESC 2024, per l'anticoagulante orale che si continua. Rene — " + reneUFH() + ". Il percorso completo è nella scheda 13, endocardite.");
+    return h + '<div class="sub-t">La molecola della FA, ESC 2024</div>';
+  }
+
+  // NBTE o sindrome antifosfolipidica trombotica (ESC 2023 endocardite, § 12.12).
+  function testoNbte(s, mol) {
+    var h = "";
+    h += '<div class="esito"><span class="big">AVK o eparina</span>' + chip("k3", "i DOAC no") + "</div>";
+    h += passo("<b>Endocardite trombotica non batterica</b>: l'anticoagulante si fa con <b>EBPM, AVK o eparina non frazionata</b>, e per i <b>DOAC non ci sono dati</b> a favore" + pgs(E12b) + ". <b>Sindrome antifosfolipidica trombotica</b>: in uno studio randomizzato in aperto il <b>rivaroxaban</b> ha dato più eventi tromboembolici e più sanguinamenti maggiori del warfarin" + pgs(E12b) + ".", true);
+    h += passo("Qui la preferenza dei DOAC della FA " + corPill("I", "A") + pgs(R7) + " non vale: la FA ESC 2024 non nomina né la NBTE né la sindrome antifosfolipidica.", true);
+    if (mol.ter === "doac") h += passo("Già in DOAC: in queste due condizioni la ESC 2023 non ha dati che lo sostengano" + pgs(E12b) + ". I passaggi fra DOAC e AVK sono nella scheda della FA.", true);
+    if (mol.ter === "avk" && mol.ttr === "basso") h += passo("In AVK con TTR &lt;70%: la FA ESC 2024 passerebbe al DOAC" + pgs(R7) + ", ma qui i DOAC non hanno dati. Si cercano le cause correggibili dell'INR instabile" + pgs(P45) + "; l'altra via della ESC 2023 è l'eparina" + pgs(E12b) + ".", true);
+    h += passo("Bersaglio INR: la ESC 2023 non ne dà uno per queste due condizioni; per la FA è <b>2,0–3,0</b> " + corPill("I", "B") + pgs(R7) + ". Si pesa il rischio emorragico del singolo" + pgs(E12a) + ".");
+    h += passo("EBPM ed eparina non frazionata: dose non nella fonte " + dv() + ". Rene — " + reneEBPM() + "; " + reneUFH() + ".");
+    return h + avkTesto(s);
+  }
+
   function testoMol(s, mol, ind) {
+    var h = testoMol24(s, mol, ind);
+    if (s.ei && mol.m !== "grav") h = testoEI(ind) + h;
+    return h;
+  }
+
+  function testoMol24(s, mol, ind) {
     var h = "";
     if (!mol.m) return '<div class="esito">' + chip("kx", "molecola —") + '<span class="muted">' + mol.perche + "</span></div>";
     if (mol.m === "grav") return nota("spenta", "Gravidanza: niente DOAC" + pgs(P69) + "; EBPM o AVK, al passo 3.");
     if (ind.e && ind.e !== "si" && ind.e !== "subsi") h += nota("info", "Senza un'indicazione certa, molecola e dose valgono solo se si decide di anticoagulare.");
+    if (mol.m === "nbte") return h + testoNbte(s, mol);
     if (mol.m === "avk") {
       h += '<div class="esito"><span class="big">AVK</span>' + chip("k3", "i DOAC no") + "</div>";
       h += passo("DOAC preferiti all'AVK " + corPill("I", "A") + ", <b>tranne</b> con valvola meccanica o stenosi mitralica moderata-severa" + pgs(R7) + ": qui l'AVK è l'unica opzione" + pgs(P45) + ".", true);
-      if (mol.valv) h += passo("Valvola meccanica: con il dabigatran più tromboembolie e più sanguinamenti maggiori che con l'AVK, e il trial dell'apixaban dopo valvola aortica meccanica si è fermato per eccesso di tromboembolie" + pgs(P44) + ". <b>Il bersaglio INR della protesi</b> non è quello della FA: lo dà il <a href=\"https://francescofugetto-ai.github.io/tool-inr-web/\">Tool INR</a> (valvulopatie, ESC/EACTS 2025)" + (mol.sm ? ", anche con la stenosi mitralica" : "") + ".", true);
+      if (mol.nbte) h += passo("Anche la <b>NBTE o la sindrome antifosfolipidica trombotica</b> escludono il DOAC: nessun dato a favore nella NBTE, e il rivaroxaban peggio del warfarin nella sindrome antifosfolipidica" + pgs(E12b) + ".", true);
+      if (mol.valv) h += passo("Valvola meccanica: con il dabigatran più tromboembolie e più sanguinamenti maggiori che con l'AVK, e il trial dell'apixaban dopo valvola aortica meccanica si è fermato per eccesso di tromboembolie" + pgs(P44) + ". <b>Il bersaglio INR della protesi</b> non è quello della FA: lo dà il Tool INR (valvulopatie, ESC/EACTS 2025)" + (mol.sm ? ", anche con la stenosi mitralica" : "") + ".", true);
       else h += passo("Stenosi mitralica moderata-severa: esclusa dai trial dei DOAC; nella cardiopatia reumatica con FA l'AVK ha dato meno eventi cardiovascolari e morti del rivaroxaban, senza più sanguinamenti" + pgs(P44) + ". <b>INR 2,0–3,0</b> " + corPill("I", "B") + pgs(R7) + ".", true);
       h += passo("Tenere il TTR sopra il 70%, con INR alla frequenza giusta, educazione e counselling " + corPill("IIa", "A") + pgs(R7) + ".");
       return h + avkTesto(s);
@@ -854,20 +966,20 @@ html.js.motore-ko #nomotore{display:block}
   function cartaApi(o, s, rn) {
     var c = "", d = DOAC.api, t = o.tre || [false, false, false];
     if (o.stato === "piena") c += passo('<span class="dose">' + d.piena + "</span>" + pgs(T11) + (o.crit.length === 1 ? ". Un solo criterio su tre (" + o.crit[0] + "): per ridurre ne servono due." : "."), true);
-    if (o.stato === "ridotta" && o.viaCl) c += passo('<span class="dose">' + d.ridotta + "</span>" + pgs("scheda tecnica (Eliquis 4.2)") + ": ClCr 15–29, che basta da solo. La Tab. 11 qui tace: la fonte dice solo che in Europa, con ClCr 15–29, una dose ridotta è approvata, con pochi pazienti nei trial" + pgs(P44) + ".", true);
+    if (o.stato === "ridotta" && o.viaCl) c += passo('<span class="dose">' + d.ridotta + "</span>" + pgs("scheda tecnica di apixaban, § 4.2") + ": ClCr 15–29, che basta da solo. La Tab. 11 qui tace: la fonte dice solo che in Europa, con ClCr 15–29, una dose ridotta è approvata, con pochi pazienti nei trial" + pgs(P44) + ".", true);
     else if (o.stato === "ridotta") c += passo('<span class="dose">' + d.ridotta + "</span>" + pgs(T11) + ": " + o.crit.join(" + ") + ".", true);
     c += '<div class="sub-t">Riduzione con 2 criteri su 3</div>' + ckRiga(t[0], "età ≥80 anni") + ckRiga(t[1], "peso ≤60 kg") + ckRiga(t[2], "creatinina sierica ≥1,5 mg/dL (133 µmol/L)");
-    return carta(o, s, rn, c, "nella Tab. 11 entra solo come creatinina sierica" + pgs(T11) + "; con ClCr 15–29, 2,5 mg due volte al giorno anche senza altri criteri; con ClCr &lt;15 o in dialisi non raccomandato; la scheda non dice con quale formula stimare la clearance" + pgs("scheda tecnica (Eliquis 4.2)") + ".");
+    return carta(o, s, rn, c, "nella Tab. 11 entra solo come creatinina sierica" + pgs(T11) + "; con ClCr 15–29, 2,5 mg due volte al giorno anche senza altri criteri; con ClCr &lt;15 o in dialisi non raccomandato; la scheda non dice con quale formula stimare la clearance" + pgs("scheda tecnica di apixaban, § 4.2") + ".");
   }
 
   function cartaDabi(o, s, rn) {
     var c = "", d = DOAC.dabi, cr = arr(rn.cl.clcr);
     if (o.stato === "piena") c += passo('<span class="dose">' + d.piena + "</span>" + pgs(T11) + ": nessun criterio di riduzione.", true);
-    if (o.stato === "ridotta") c += passo('<span class="dose">' + d.ridotta + "</span>" + pgs(T11) + ": riduzione raccomandata — " + o.crit.join(" + ") + "." + (s.verap ? " Con il verapamil i due si prendono insieme" + pgs("scheda tecnica (Pradaxa 4.2)") + "." : ""), true);
-    if (o.stato === "scelta") c += passo('<span class="dose">150 mg due volte al giorno, oppure 110 mg</span>' + pgs(T11) + ": riduzione da valutare caso per caso — " + o.crit.join(" + ") + ". Si pesano il rischio tromboembolico e quello emorragico" + pgs("scheda tecnica (Pradaxa 4.2)") + ".", true);
+    if (o.stato === "ridotta") c += passo('<span class="dose">' + d.ridotta + "</span>" + pgs(T11) + ": riduzione raccomandata — " + o.crit.join(" + ") + "." + (s.verap ? " Con il verapamil i due si prendono insieme" + pgs("scheda tecnica di dabigatran, § 4.2") + "." : ""), true);
+    if (o.stato === "scelta") c += passo('<span class="dose">150 mg due volte al giorno, oppure 110 mg</span>' + pgs(T11) + ": riduzione da valutare caso per caso — " + o.crit.join(" + ") + ". Si pesano il rischio tromboembolico e quello emorragico" + pgs("scheda tecnica di dabigatran, § 4.2") + ".", true);
     c += '<div class="sub-t">Riduzione raccomandata con uno qualunque</div>' + ckRiga(s.eta >= SOGLIE.dabiEta, "età ≥80 anni") + ckRiga(s.verap, "verapamil in corso");
     c += '<div class="sub-t">Da valutare caso per caso con uno qualunque</div>' + ckRiga(s.eta >= SOGLIE.dabiEtaCaso && s.eta < SOGLIE.dabiEta, "età 75–80") + ckRiga(cr !== null && cr >= 30 && cr <= 50, "ClCr 30–50") + ckRiga(s.gi, "gastrite, esofagite o reflusso gastroesofageo") + ckRiga(s.emo, "altro aumento del rischio emorragico");
-    return carta(o, s, rn, c, "ClCr &lt;30 controindicato, stimata con Cockcroft-Gault" + pgs("scheda tecnica (Pradaxa 4.2, 4.3)") + "; il testo della fonte lo controindica con eGFR &lt;30" + pgs(P44) + ": sotto 30 con l'una o con l'altra, niente dabigatran. ClCr prima di iniziare, e almeno una volta l'anno sopra i 75 anni o con insufficienza lieve-moderata; l'emodialisi lo rimuove" + pgs("scheda tecnica (Pradaxa 4.2, 4.4)") + ".");
+    return carta(o, s, rn, c, "ClCr &lt;30 controindicato, stimata con Cockcroft-Gault" + pgs("scheda tecnica di dabigatran, § 4.2, 4.3") + "; il testo della fonte lo controindica con eGFR &lt;30" + pgs(P44) + ": sotto 30 con l'una o con l'altra, niente dabigatran. ClCr prima di iniziare, e almeno una volta l'anno sopra i 75 anni o con insufficienza lieve-moderata; l'emodialisi lo rimuove" + pgs("scheda tecnica di dabigatran, § 4.2, 4.4") + ".");
   }
 
   function cartaEdo(o, s, rn) {
@@ -875,16 +987,16 @@ html.js.motore-ko #nomotore{display:block}
     if (o.stato === "piena") c += passo('<span class="dose">' + d.piena + "</span>" + pgs(T11) + ": nessun criterio di riduzione.", true);
     if (o.stato === "ridotta") c += passo('<span class="dose">' + d.ridotta + "</span>" + pgs(T11) + ": " + o.crit.join(" + ") + " — ne basta uno." + (o.farmNo ? " Le terapie del passo 6 non sono confermate, ma non cambierebbero questa dose." : ""), true);
     c += '<div class="sub-t">Riduzione con uno qualunque</div>' + ckRiga(cr !== null && cr >= 15 && cr <= 50, "ClCr 15–50") + ckRiga(s.peso !== null && s.peso <= SOGLIE.edoPeso, "peso ≤60 kg") + ckRiga(!!(s.farm && f4), "ciclosporina, dronedarone, eritromicina o ketoconazolo");
-    if (o.alta) c += nota("info", "<b>ClCr oltre 100</b>: la scheda tecnica chiede un'attenta valutazione del rischio tromboembolico ed emorragico individuale, senza una soglia, e con ClCr &gt;100 la dose raccomandata resta 60 mg" + pgs("scheda tecnica (Lixiana 4.4, 5.1)") + ".");
-    return carta(o, s, rn, c, "ClCr &lt;15 o dialisi, non raccomandato; l'emodialisi non lo rimuove; con clearance alta, solo dopo un'attenta valutazione individuale, senza una soglia" + pgs("scheda tecnica (Lixiana 4.2, 4.4, 5.1)") + ".");
+    if (o.alta) c += nota("info", "<b>ClCr oltre 100</b>: la scheda tecnica chiede un'attenta valutazione del rischio tromboembolico ed emorragico individuale, senza una soglia, e con ClCr &gt;100 la dose raccomandata resta 60 mg" + pgs("scheda tecnica di edoxaban, § 4.4, 5.1") + ".");
+    return carta(o, s, rn, c, "ClCr &lt;15 o dialisi, non raccomandato; l'emodialisi non lo rimuove; con clearance alta, solo dopo un'attenta valutazione individuale, senza una soglia" + pgs("scheda tecnica di edoxaban, § 4.2, 4.4, 5.1") + ".");
   }
 
   function cartaRiva(o, s, rn) {
     var c = "", d = DOAC.riva, cr = arr(rn.cl.clcr);
-    if (o.stato === "piena") c += passo('<span class="dose">' + d.piena + "</span>, con il cibo" + pgs(T11 + "; il cibo: scheda tecnica, Xarelto 4.2") + ".", true);
-    if (o.stato === "ridotta") c += passo('<span class="dose">' + d.ridotta + "</span>, con il cibo" + pgs(T11) + ": ClCr 15–49." + (o.cautela ? " Fra 15 e 29, <b>con cautela</b>" + pgs("scheda tecnica (Xarelto 4.2)") + "." : ""), true);
+    if (o.stato === "piena") c += passo('<span class="dose">' + d.piena + "</span>, con il cibo" + pgs(T11 + "; il cibo: scheda tecnica di rivaroxaban, § 4.2") + ".", true);
+    if (o.stato === "ridotta") c += passo('<span class="dose">' + d.ridotta + "</span>, con il cibo" + pgs(T11) + ": ClCr 15–49." + (o.cautela ? " Fra 15 e 29, <b>con cautela</b>" + pgs("scheda tecnica di rivaroxaban, § 4.2") + "." : ""), true);
     c += '<div class="sub-t">Riduzione</div>' + ckRiga(cr !== null && cr >= 15 && cr < 50, "ClCr 15–49");
-    return carta(o, s, rn, c, "la fascia moderata è 30–49, non 30–50; con ClCr 15–29, 15 mg con cautela; con ClCr &lt;15 sconsigliato; non dializzabile" + pgs("scheda tecnica (Xarelto 4.2, 5.2)") + ".");
+    return carta(o, s, rn, c, "la fascia moderata è 30–49, non 30–50; con ClCr 15–29, 15 mg con cautela; con ClCr &lt;15 sconsigliato; non dializzabile" + pgs("scheda tecnica di rivaroxaban, § 4.2, 5.2") + ".");
   }
 
   function testoDosi(s, rn, mol, ind, dd) {
@@ -892,11 +1004,13 @@ html.js.motore-ko #nomotore{display:block}
     if (!mol.m) return '<div class="esito">' + chip("kx", "dosi —") + '<span class="muted">' + mol.perche + "</span></div>";
     if (mol.m === "grav") return nota("spenta", "Gravidanza: i DOAC non sono raccomandati" + pgs(P69) + ", e la fonte non dà dosi.");
     if (mol.m === "avk") return nota("spenta", "Con valvola meccanica o stenosi mitralica moderata-severa i DOAC non si usano: <b>nessuna dose di DOAC</b>" + pgs(R7) + ". L'AVK si dosa sull'INR (passo 4).");
+    if (mol.m === "nbte") return nota("spenta", "Endocardite trombotica non batterica o sindrome antifosfolipidica trombotica: <b>nessuna dose di DOAC</b> — nessun dato a favore nella NBTE, e il rivaroxaban peggio del warfarin nella sindrome antifosfolipidica" + pgs(E12b) + ". L'AVK si dosa sull'INR (passo 4); le dosi di EBPM ed eparina non frazionata la fonte non le dà, e il loro rene è al passo 4.");
+    if (s.ei) h += nota("info", "<b>Endocardite infettiva</b> (passo 4): le dosi valgono per l'anticoagulante orale che si continua. Con un sanguinamento maggiore si interrompe " + corPill("I", "C") + pgs(E22) + "; senza ictus e con chirurgia probabile si passa all'eparina non frazionata " + corPill("IIa", "C") + pgs(E22) + ", la cui dose la fonte non dà; il suo rene è al passo 4.");
     if (ind.e !== "si" && ind.e !== "subsi") h += nota("info", "<b>" + (ind.e ? "Nessuna indicazione certa" : "Indicazione non ancora decisa") + "</b>: le dosi qui sotto valgono solo se si decide di anticoagulare.");
     if (mol.m === "resta") h += nota("info", "Si può restare all'AVK: le dosi qui sotto valgono se si decide di passare al DOAC.");
     h += cartaApi(dd.api, s, rn) + cartaDabi(dd.dabi, s, rn) + cartaEdo(dd.edo, s, rn) + cartaRiva(dd.riva, s, rn);
     for (k in dd) if (dd.hasOwnProperty(k) && (dd[k].stato === "nr" || dd[k].stato === "ci")) esclusi++;
-    if (esclusi === 4) h += nota("stop", "<b>Nessun DOAC ha una dose per questo rene.</b> In emodialisi la fonte riporta solo piccoli trial — apixaban 2,5 mg due volte al giorno e rivaroxaban 10 mg contro l'AVK —, senza una raccomandazione" + pgs(P44) + ". La scelta è clinica; il warfarin non chiede aggiustamenti renali, con il rischio di calcifilassi soprattutto in dialisi" + pgs("scheda tecnica (Coumadin 4.2, 4.4)") + ".");
+    if (esclusi === 4) h += nota("stop", "<b>Nessun DOAC ha una dose per questo rene.</b> In emodialisi la fonte riporta solo piccoli trial — apixaban 2,5 mg due volte al giorno e rivaroxaban 10 mg contro l'AVK —, senza una raccomandazione" + pgs(P44) + ". La scelta è clinica; il warfarin non chiede aggiustamenti renali, con il rischio di calcifilassi soprattutto in dialisi" + pgs("scheda tecnica di warfarin, § 4.2, 4.4") + ".");
     h += passo("Dose ridotta senza i criteri della sua molecola: <b>no</b> " + corPill("III", "B") + pgs(R7) + " — aumenta gli ictus senza ridurre i sanguinamenti" + pgs(P44) + ".");
     h += passo("Le soglie di clearance si leggono sul valore arrotondato all'intero, quello mostrato al passo 5.");
     return h;
@@ -923,12 +1037,14 @@ html.js.motore-ko #nomotore{display:block}
     // con la restrittiva (FA clinica) 0 e 1 danno la stessa IIa C: il punto cambia la classe solo da 1
     var tC = !!s.fa && !s.grav && s.cmp !== "hcm" && !s.pC && p.esatto && (s.cmp === "rcm" && s.fa === "clinica" ? p.tot === 1 : p.tot <= 1);
     var tR = s.fa === "clinica" && !s.grav && s.cmp === "rcm", tA = s.fa === "clinica" && !s.grav && s.cmp === "altra";
-    return inc(tDab, "<b>Dabigatran: eGFR o clearance?</b> Il testo lo controindica con eGFR &lt;30 mL/min/1,73 m²" + pgs(P44) + "; la Tab. 11 scrive il suo criterio renale in clearance della creatinina" + pgs(T11) + ", e la scheda tecnica la controindicazione in ClCr &lt;30 con Cockcroft-Gault" + pgs("scheda tecnica (Pradaxa 4.2, 4.3)") + ". Le due misure non coincidono, soprattutto nell'anziano e ai pesi estremi. Lo strumento prende la lettura più prudente: sotto 30 con l'una o con l'altra, niente dabigatran" +
+    return inc(tDab, "<b>Dabigatran: eGFR o clearance?</b> Il testo lo controindica con eGFR &lt;30 mL/min/1,73 m²" + pgs(P44) + "; la Tab. 11 scrive il suo criterio renale in clearance della creatinina" + pgs(T11) + ", e la scheda tecnica la controindicazione in ClCr &lt;30 con Cockcroft-Gault" + pgs("scheda tecnica di dabigatran, § 4.2, 4.3") + ". Le due misure non coincidono, soprattutto nell'anziano e ai pesi estremi. Lo strumento prende la lettura più prudente: sotto 30 con l'una o con l'altra, niente dabigatran" +
         (dab.incoer === true && rn.cl.clcr !== null && rn.egfr !== null ? " — qui ClCr " + nf(rn.cl.clcr, 0) + " ed eGFR " + nf(rn.egfr, 0) + " cadono ai lati opposti di 30" : (dab.incoer === "manca" ? " — qui l'eGFR manca" : "")) + ".") +
-      inc(tEdo, "<b>Edoxaban: Tab. 11 o Fig. 9?</b> La Tab. 11 scende a 30 mg con uno solo fra ciclosporina, dronedarone, eritromicina e ketoconazolo" + pgs(T11) + "; la Fig. 9 con il dronedarone dice «evitare o ridurre la dose», e con ciclosporina, eritromicina, ketoconazolo e itraconazolo «evitare o ridurre» solo se c'è un'altra terapia che interagisce" + pgs(F9) + ". La scheda tecnica, da cui la Tab. 11 dice di prendere le dosi, sta con la Tab. 11: basta uno solo dei quattro, e l'itraconazolo non lo nomina" + pgs("scheda tecnica (Lixiana 4.5)") + ". Lo strumento segue la Tab. 11" + (tEdo ? " — qui: " + qui.join(", ") : "") + ".") +
+      inc(tEdo, "<b>Edoxaban: Tab. 11 o Fig. 9?</b> La Tab. 11 scende a 30 mg con uno solo fra ciclosporina, dronedarone, eritromicina e ketoconazolo" + pgs(T11) + "; la Fig. 9 con il dronedarone dice «evitare o ridurre la dose», e con ciclosporina, eritromicina, ketoconazolo e itraconazolo «evitare o ridurre» solo se c'è un'altra terapia che interagisce" + pgs(F9) + ". La scheda tecnica, da cui la Tab. 11 dice di prendere le dosi, sta con la Tab. 11: basta uno solo dei quattro, e l'itraconazolo non lo nomina" + pgs("scheda tecnica di edoxaban, § 4.5") + ". Lo strumento segue la Tab. 11" + (tEdo ? " — qui: " + qui.join(", ") : "") + ".") +
       inc(tC, "<b>La C del CHA₂DS₂-VA.</b> Qui è lo scompenso sintomatico a qualunque FE, o una FEVS ≤40% asintomatica" + pgs(T10) + "; lo scompenso ESC 2026 la scrive come scompenso cronico negli stadi B, C e D, e lo stadio B, il pre-scompenso, va oltre la sola FEVS ≤40% asintomatica (scheda dello scompenso, sezione 9). Con un pre-scompenso a FEVS &gt;40% il punto c'è là e non qui. Lo strumento segue la Tab. 10" + (tC ? " — qui un punto in più cambierebbe la classe" : "") + ".") +
       inc(tR, "<b>Cardiomiopatia restrittiva: «sempre» o IIa C?</b> ESC 2023 sulle cardiomiopatie. La riga dà l'anticoagulante da considerare, IIa C" + pgs(C11b) + "; la Tab. 15 della stessa fonte lo scrive «sempre, se non controindicato», come per la HCM" + pgs(C15) + ", e il testo dice che alla restrittiva e all'amiloidosi si dà una raccomandazione simile a quella della HCM" + pgs(C41) + ". Tutte e tre portano all'anticoagulante: cambia la forza. Lo strumento segue la riga, IIa C, e con CHA₂DS₂-VA ≥2 la I A della 2024.") +
-      inc(tA, "<b>DCM, NDLVC, ARVC: punteggio o «sempre»?</b> ESC 2023 sulle cardiomiopatie. La riga decide col CHA₂DS₂-VASc" + pgs(C11) + "; la Tab. 15 aggiunge «sempre con scompenso o FEVS ridotta»" + pgs(C15) + ". Lo scompenso vale un punto: con quello soltanto si arriva alla IIa (C nella 2024, B nella 2023), non a un «sempre». Lo strumento segue le righe; la Tab. 15 non ha classe.");
+      inc(tA, "<b>DCM, NDLVC, ARVC: punteggio o «sempre»?</b> ESC 2023 sulle cardiomiopatie. La riga decide col CHA₂DS₂-VASc" + pgs(C11) + "; la Tab. 15 aggiunge «sempre con scompenso o FEVS ridotta»" + pgs(C15) + ". Lo scompenso vale un punto: con quello soltanto si arriva alla IIa (C nella 2024, B nella 2023), non a un «sempre». Lo strumento segue le righe; la Tab. 15 non ha classe.") +
+      (s.ei ? inc(true, "<b>Endocardite: quale eparina?</b> ESC 2023 sull'endocardite. Il testo chiede presto un ponte con eparina a basso peso molecolare o non frazionata al posto dell'anticoagulante orale, soprattutto se la chirurgia è indicata" + pgs(E1211) + "; la riga della Rec. Table 22 nomina la sola non frazionata" + pgs(E22) + ". E il testo dice «raccomandata» la prosecuzione dell'anticoagulante con un'indicazione preesistente" + pgs(E91) + ", ma nessuna riga la gradua: la classe non c'è. Lo strumento segue la riga, eparina non frazionata.") +
+        inc(true, "<b>Endocardite: l'eparina dopo un sanguinamento cerebrale?</b> Incoerenza della fonte, ESC 2023 sull'endocardite. Con un sanguinamento cerebrale il testo preferisce passare dall'anticoagulante orale all'eparina" + pgs(E91) + "; la Rec. Table 22 invece, con un'emorragia intracranica, interrompe l'anticoagulante " + corPill("I", "C") + " e fa ripartire l'eparina non frazionata solo con una valvola meccanica " + corPill("IIa", "C") + pgs(E22) + " — quella ripresa sta nel Tool INR. Senza valvola meccanica, dopo un'emorragia intracranica la tabella non dà una ripresa, e il testo non dice se parla di un sanguinamento minore. Lo strumento segue la tabella: si interrompe.") : "");
   }
 
   function disegna() {
@@ -957,12 +1073,14 @@ html.js.motore-ko #nomotore{display:block}
     lim.push("Non vale in gravidanza: EBPM o AVK, l'AVK non nel primo trimestre né dalla 36ª settimana (I C), e i DOAC non sono raccomandati (Rec. Table 28 e testo, p. 3369).");
     lim.push("Con valvola meccanica o stenosi mitralica moderata-severa dice solo «AVK»: la dose va sull'INR, e il bersaglio della protesi meccanica è nel Tool INR.");
     lim.push("Il rischio emorragico lo valuta chi compila: nella FA clinica non serve a negare l'anticoagulante, si correggono i fattori modificabili (Rec. Table 12, p. 3348; scheda della FA, sezione 7).");
-    lim.push("Clearance di Cockcroft-Gault sul peso reale, che decide (decisione del medico, 03/10/2026: il peso reale lo chiede l'etichetta FDA di Xarelto; le schede tecniche europee lette non dicono quale peso); con BMI ≥30 accanto il valore sul peso aggiustato (peso ideale di Devine + 0,4 × l'eccesso). Il Tool EP durata e il Tool Antitrombotici SCA, per altre indicazioni, usano il peso aggiustato.");
+    lim.push("Clearance di Cockcroft-Gault sul peso reale, che decide (decisione del medico, 03/10/2026: il peso reale lo chiede l'etichetta FDA di rivaroxaban; le schede tecniche europee lette non dicono quale peso); con BMI ≥30 accanto il valore sul peso aggiustato (peso ideale di Devine + 0,4 × l'eccesso). Il Tool EP durata e il Tool Antitrombotici SCA, per altre indicazioni, usano il peso aggiustato.");
     if (rn.cl.clcr !== null && s.alt === null) lim.push("Altezza non indicata: il BMI non si calcola, e il valore sul peso aggiustato non compare; nell'obeso il peso reale dà la clearance più alta.");
     lim.push("Le soglie si leggono sulla clearance arrotondata all'intero: 49,6 vale 50, e il rivaroxaban resta a 20 mg (15–49), mentre l'edoxaban scende a 30 (15–50).");
     lim.push("Le interazioni sono solo quelle dei sette farmaci del passo 6; il resto della Fig. 9 è nella scheda della FA, sezione 5.6.");
     if (s.fa === "sub") lim.push("Per la FA subclinica la fonte non dà una soglia di «rischio alto»: lo strumento usa l'indicatore della Rec. Table 6 (CHA₂DS₂-VA ≥2).");
     if (s.cmp === "rcm" || s.cmp === "altra") lim.push("Restrittiva, dilatativa, NDLVC e ARVC vengono dalla ESC 2023 sulle cardiomiopatie (Rec. Table 11, pp. 3543–3544), che usa ancora il CHA₂DS₂-VASc; molecola, dose e rene restano quelli della FA ESC 2024: nelle cardiomiopatie non c'è un confronto randomizzato fra DOAC e AVK, e i dati suggeriscono di usarli come nella popolazione generale (ESC 2023, p. 3541).");
+    if (s.ei) lim.push("Endocardite infettiva (ESC 2023): lo strumento non chiede se c'è un sanguinamento maggiore, un ictus o una chirurgia probabile, e mostra i rami ciascuno con la sua condizione; la dose dell'eparina non frazionata non è nella fonte, e fra DOAC e AVK la ESC 2023 non sceglie. «In corso o recente»: per «recente» la fonte non dà un tempo.");
+    if (s.nbte) lim.push("NBTE e sindrome antifosfolipidica trombotica (ESC 2023, § 12.12, pp. 4009–4010): solo testo, senza una riga di raccomandazione e senza classe; nessun bersaglio INR proprio e nessuna dose di EBPM o eparina non frazionata.");
     lim.push("Non tratta il passaggio fra AVK e DOAC, la cardioversione, l'ablazione, gli interventi e il sanguinamento: sono nella scheda della FA.");
     el("limiti").innerHTML = "<li>" + lim.join("</li><li>") + "</li>";
 
@@ -971,7 +1089,7 @@ html.js.motore-ko #nomotore{display:block}
     var bi = { si:["k1", "raccomandato"], forse:["k2", "da considerare"], zero:["k0", "non dal punteggio"], subsi:["k2", "DOAC da considerare"], sub1:["kx", "scelta clinica"],
                subzero:["k0", "non dal punteggio"], subno:["k3", "DOAC non indicato"], grav:["k4", "gravidanza"] }[ind.e] || ["kx", "—"];
     bar("barInd", bi[0], bi[1]);
-    var bm = { avk:["k3", "AVK"], doac:["k1", "DOAC"], doacoavk:["k1", "DOAC, o AVK in range"], resta:["k2", "AVK, si può restare"], grav:["kx", "—"] }[mol.m] || ["kx", "—"];
+    var bm = { avk:["k3", "AVK"], nbte:["k3", "AVK o eparina"], doac:["k1", "DOAC"], doacoavk:["k1", "DOAC, o AVK in range"], resta:["k2", "AVK, si può restare"], grav:["kx", "—"] }[mol.m] || ["kx", "—"];
     bar("barMol", bm[0], bm[1]);
     bar("barRene", rn.dialisi ? "k4" : (rn.cl.clcr !== null ? kcl(rn.cl.clcr) : "kx"), rn.dialisi ? "dialisi" : (rn.cl.clcr !== null ? "ClCr " + nf(rn.cl.clcr, 0) : "—"));
   }
