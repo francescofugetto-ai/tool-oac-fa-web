@@ -250,11 +250,12 @@ html.js.motore-ko #nomotore{display:block}
 <header class="hero">
   <div class="kicker">Strumento · Fibrillazione atriale · ESC 2024</div>
   <h1 class="headline">FA — anticoagulante: chi, quale molecola, quale dose</h1>
-  <p class="lede"><strong>Come si usa.</strong> Il passo 1 dice che FA è e le condizioni che decidono prima del punteggio — una cardiomiopatia, valvola meccanica, stenosi mitralica, rischio emorragico, gravidanza —, <strong>da confermare come valutate</strong>. Il passo 2 calcola il <strong>CHA₂DS₂-VA</strong> con le definizioni della Tab. 10, senza il sesso; il 3 ne ricava l'indicazione, il 4 la molecola, con due caselle per la ESC 2023 sull'endocardite: l'<strong>endocardite infettiva</strong>, e l'<strong>endocardite trombotica non batterica</strong> con la sindrome antifosfolipidica. Il passo 5 porta peso, creatinina ed eGFR: la <strong>clearance di Cockcroft-Gault sul peso reale</strong> la calcola lo strumento, e con BMI ≥30 mette accanto quella sul peso aggiustato. Il passo 6 chiede i farmaci e i fattori che cambiano la dose. Il passo 7 dà la dose di ogni DOAC con il criterio che l'ha decisa, e il rene oltre la Tab. 11 dalle schede tecniche. Con una SCA o una PCI ci sono il Tool Antitrombotici SCA e il Tool DAPT. <strong>Azzera</strong>, in alto, ricomincia.</p>
+  <p class="lede"><strong>Come si usa.</strong> Il passo 1 dice che FA è, o se è un flutter senza FA documentata, e le condizioni che decidono prima del punteggio — una cardiomiopatia, valvola meccanica, stenosi mitralica, rischio emorragico, gravidanza —, <strong>da confermare come valutate</strong>. Il passo 2 calcola il <strong>CHA₂DS₂-VA</strong> con le definizioni della Tab. 10, senza il sesso; il 3 ne ricava l'indicazione, il 4 la molecola, con due caselle per la ESC 2023 sull'endocardite: l'<strong>endocardite infettiva</strong>, e l'<strong>endocardite trombotica non batterica</strong> con la sindrome antifosfolipidica. Il passo 5 porta peso, creatinina ed eGFR: la <strong>clearance di Cockcroft-Gault sul peso reale</strong> la calcola lo strumento, e con BMI ≥30 mette accanto quella sul peso aggiustato. Il passo 6 chiede i farmaci e i fattori che cambiano la dose. Il passo 7 dà la dose di ogni DOAC con il criterio che l'ha decisa, e il rene oltre la Tab. 11 dalle schede tecniche. Con una SCA o una PCI ci sono il Tool Antitrombotici SCA e il Tool DAPT. <strong>Azzera</strong>, in alto, ricomincia.</p>
   <div class="meta-row">
     <span class="meta-chip"><strong>Fonte</strong> 2024 ESC Guidelines for the management of atrial fibrillation, versione corretta</span>
     <span class="meta-chip"><strong>Calcolo</strong> Tab. 10 e Rec. Table 6, p. 3342 · Fig. 9, p. 3343 · Rec. Table 7, p. 3344 · Tab. 11, p. 3345</span>
     <span class="meta-chip"><strong>Rene</strong> schede tecniche di apixaban, dabigatran, edoxaban e rivaroxaban (EMA), lette il 03/10/2026</span>
+    <span class="meta-chip"><strong>Flutter</strong> ESC 2024, Rec. Table 30 e § 9.14, p. 3371 · ESC 2019 TSV, p. 679</span>
     <span class="meta-chip"><strong>Cardiomiopatie</strong> ESC 2023, Rec. Table 11, pp. 3543–3544 · Tab. 15, p. 3542</span>
     <span class="meta-chip"><strong>Endocardite</strong> ESC 2023, Rec. Table 22 p. 4009 · § 9.1 p. 3991 · § 12.11–12.12 pp. 4009–4010</span>
   </div>
@@ -267,16 +268,18 @@ html.js.motore-ko #nomotore{display:block}
   <span class="lbl">Rene</span> <span id="barRene" class="cat kx">—</span>
   <span class="sp"></span>
   <button class="btn" id="azzera" type="button">Azzera</button>
+  <div id="rigaEta" class="hide" style="flex:1 1 100%"></div>
 </div>
 
-<div class="stage"><span class="stage-n">1</span><span class="stage-t">La FA, e ciò che decide prima del punteggio</span><span class="stage-w">Rec. Table 6, p. 3342 · Rec. Table 7, p. 3344 · ESC 2023, Rec. Table 11</span></div>
+<div class="stage"><span class="stage-n">1</span><span class="stage-t">La FA o il flutter, e ciò che decide prima del punteggio</span><span class="stage-w">Rec. Table 6, p. 3342 · Rec. Table 7, p. 3344 · Rec. Table 30, p. 3371 · ESC 2023, Rec. Table 11</span></div>
 <div class="card">
-  <div class="riga"><span class="fl">Fibrillazione atriale</span>
+  <div class="riga"><span class="fl">Fibrillazione atriale o flutter</span>
     <span class="seg">
       <label><input type="radio" name="fa" value="clinica"><span>clinica, documentata all'ECG</span></label>
       <label><input type="radio" name="fa" value="sub"><span>subclinica da dispositivo</span></label>
+      <label><input type="radio" name="fa" value="flutter"><span>flutter senza FA documentata</span></label>
     </span></div>
-  <div class="muted" style="font-size:12.5px;margin:4px 0 4px">Parossistica, persistente o permanente non conta: il tipo temporale non decide l'anticoagulante. La subclinica è quella asintomatica, vista solo da un dispositivo impiantato.</div>
+  <div class="muted" style="font-size:12.5px;margin:4px 0 4px">Parossistica, persistente o permanente non conta: il tipo temporale non decide l'anticoagulante. La subclinica è quella asintomatica, vista solo da un dispositivo impiantato. Un flutter con FA documentata si segna «clinica»: anticoagulante come nella FA (ESC 2019 TSV, p. 679, I B).</div>
   <div class="riga"><span class="fl">Cardiomiopatia<small>ipertrofica o amiloidosi: anticoagulante a tutti; restrittiva: da considerare, qualunque sia il punteggio; le altre decidono col punteggio</small></span>
     <span class="seg">
       <label><input type="radio" name="cmp" value="no"><span>nessuna</span></label>
@@ -371,7 +374,8 @@ html.js.motore-ko #nomotore{display:block}
 <div class="foot">
   <strong>Fonte.</strong> Van Gelder IC, Rienstra M, Bunting KV, et al. 2024 ESC Guidelines for the management of atrial fibrillation developed in collaboration with EACTS. <em>Eur Heart J</em> 2024;45:3314–3414, doi:10.1093/eurheartj/ehae176, nella versione corretta (Correction, <em>Eur Heart J</em> 2025;46:4349, doi:10.1093/eurheartj/ehaf306: Tab. 11 in µmol/L) — avvio dell'anticoagulante (p. 3341), definizioni del CHA₂DS₂-VA (Tab. 10, p. 3342), rischio tromboembolico (Rec. Table 6, p. 3342), interazioni (Fig. 9, p. 3343), DOAC, rene e valvole (§ 6.2.1, p. 3344), anticoagulanti orali (Rec. Table 7, p. 3344), AVK e FA subclinica (pp. 3345–3346), dosi dei DOAC (Tab. 11, p. 3345), antiaggreganti (Rec. Table 8, p. 3346), rischio emorragico (Rec. Table 12, p. 3348), anticoagulante con gli antiaggreganti (Rec. Table 24, p. 3366), gravidanza (Rec. Table 28, p. 3369). Schede tecniche lette il 03/10/2026, citate per principio attivo, con l'autorità e la data del documento: apixaban (EMA, 10/04/2026), dabigatran (EMA, 24/11/2025), edoxaban (EMA, 27/08/2025) e rivaroxaban (EMA, 22/09/2026); warfarin (AIFA, 09/04/2021) e acenocumarolo (AIFA, 04/09/2026).<br>
   <strong>Cardiomiopatie.</strong> Arbelo E, Protonotarios A, Gimeno JR, et al. 2023 ESC Guidelines for the management of cardiomyopathies. <em>Eur Heart J</em> 2023;44:3503–3626, doi:10.1093/eurheartj/ehad194 — anticoagulante nelle cardiomiopatie (p. 3541; Rec. Table 11, pp. 3543–3544), la FA fenotipo per fenotipo (Tab. 15, p. 3542).<br>
-  <strong>Endocardite.</strong> Delgado V, Ajmone Marsan N, de Waha S, et al. 2023 ESC Guidelines for the management of endocarditis. <em>Eur Heart J</em> 2023;44:3948–4042, doi:10.1093/eurheartj/ehad193 — anticoagulante con un'indicazione preesistente (§ 9.1, p. 3991), antitrombotici nell'endocardite (§ 12.11 e Rec. Table 22, p. 4009), endocardite trombotica non batterica e sindrome antifosfolipidica (§ 12.12, pp. 4009–4010). Il percorso completo è nella scheda 13, endocardite. Il rene delle eparine, che la fonte non dà, viene dalle schede tecniche di enoxaparina (AIFA, 11/08/2026) e di eparina sodica (AIFA, revisione 23/02/2024), lette il 03/10/2026 come nel prontuario della scheda 10, e per l'eparina non frazionata anche dalla linea guida sulle valvulopatie, che la usa nel rene grave: Praz F, Borger MA, et al. 2025 ESC/EACTS Guidelines for the management of valvular heart disease. <em>Eur Heart J</em> 2025;46:4635–4736 — bridging nella CKD stadio IV–V (Tab. 11, p. 4694). Ogni numero mostrato porta la pagina.<br><br>
+  <strong>Endocardite.</strong> Delgado V, Ajmone Marsan N, de Waha S, et al. 2023 ESC Guidelines for the management of endocarditis. <em>Eur Heart J</em> 2023;44:3948–4042, doi:10.1093/eurheartj/ehad193 — anticoagulante con un'indicazione preesistente (§ 9.1, p. 3991), antitrombotici nell'endocardite (§ 12.11 e Rec. Table 22, p. 4009), endocardite trombotica non batterica e sindrome antifosfolipidica (§ 12.12, pp. 4009–4010). Il percorso completo è nella scheda 13, endocardite. Il rene delle eparine, che la fonte non dà, viene dalle schede tecniche di enoxaparina (AIFA, 11/08/2026) e di eparina sodica (AIFA, revisione 23/02/2024), lette il 03/10/2026 come nel prontuario della scheda 10, e per l'eparina non frazionata anche dalla linea guida sulle valvulopatie, che la usa nel rene grave: Praz F, Borger MA, et al. 2025 ESC/EACTS Guidelines for the management of valvular heart disease. <em>Eur Heart J</em> 2025;46:4635–4736 — bridging nella CKD stadio IV–V (Tab. 11, p. 4694).<br>
+  <strong>Flutter.</strong> La stessa ESC 2024 — il flutter (§ 3.6, p. 3330; § 9.14 e Rec. Table 30, p. 3371). Brugada J, Katritsis DG, Arbelo E, et al. 2019 ESC Guidelines for the management of patients with supraventricular tachycardia. <em>Eur Heart J</em> 2020;41:655–720, doi:10.1093/eurheartj/ehz467 — righe del macro-rientro (p. 679), anticoagulante nel flutter (§ 11.1.4.1.6, p. 681). Eyob Fesseha H, Aro AL, Teppo K, et al. Ischaemic stroke in atrial flutter vs fibrillation: a Finnish nationwide study. <em>Eur Heart J</em> 2026, doi:10.1093/eurheartj/ehag681, PMID 42690735. Schede tecniche di apixaban, dabigatran, edoxaban e rivaroxaban (EMA), § 4.1, lette l'08/11/2026. Ogni numero mostrato porta la pagina.<br><br>
   Strumento personale di studio e consultazione: <strong>non sostituisce il giudizio clinico né la scheda tecnica del farmaco</strong>. Non salva i dati e non li invia in rete.
 </div>
 </div>
@@ -469,9 +473,51 @@ html.js.motore-ko #nomotore{display:block}
        of valvular heart disease la usa nella CKD stadio IV-V (Tab. 11,
        p. 4694), come il Tool EP con ClCr <=30 — con accanto la
        controindicazione della scheda tecnica; D20, il Tool INR si nomina e
-       non si linka. */
-  var SOGLIE = { a2:75, a1:65, apiEta:80, apiPeso:60, apiCrMg:1.5, apiCrUmol:133, dabiEta:80, dabiEtaCaso:75,
-                 edoPeso:60, cl15:15, cl30:30, cl50:50, clAlta:100, bmiAgg:30, avk75:75, egfr30:30 };
+       non si linka.
+     Flutter senza FA documentata (scelta del medico 6, 08/11/2026):
+     ESC 2024, Rec. Table 30, p. 3371 — flutter a rischio tromboembolico
+       elevato: anticoagulante orale I B (senza un punteggio; classe guardata
+       sull'immagine della pagina). § 9.14, p. 3371 — la prevenzione rimanda
+       alla sezione 6. p. 3330 — piu' della meta' svilupperà una FA.
+     Rec. Table 6, p. 3342 — punteggio >=2 I C, 1 IIa C (immagine della pagina).
+     2019 ESC Guidelines per le TSV, p. 679 — con FA come nella FA I B; senza
+       FA da considerare, soglia non stabilita, IIa C.
+     Lettura dello strumento: da 2 punti I B, a 1 punto IIa C, a 0 non indicato
+       dal punteggio; punteggio, molecola, dosi e rene come nella FA.
+     Cardiomiopatie: le righe della ESC 2023 dicono «AF or atrial flutter»
+       (Rec. Table 11, pp. 3543-3544); la Tab. 15 parla di FA.
+     Schede tecniche di apixaban, dabigatran, edoxaban, rivaroxaban, 4.1 (EMA,
+       lette l'08/11/2026): FA non valvolare; il flutter non e' nominato.
+     Eyob Fesseha 2026 (PubMed, PMID 42690735): rapporto aggiustato 0,60
+       (0,49-0,74), solo flutter contro sola FA: non cambia la classe.
+     Eta' sotto i 18 anni (scelta del medico 2, 08/11/2026, regola del Tool TV):
+       niente Cockcroft-Gault, niente mg, una riga in testa; strada e classi
+       restano. Nel testo della ESC 2024 non compaiono bambini ne' adolescenti.
+     Decisioni 20-22 del medico, 08/11/2026:
+     20. ESC 2023 cardiomiopatie, p. 3541 — la FA e' rara nel bambino con
+       cardiomiopatia genetica; nessun dato sul punteggio ne' sull'anticoagulante:
+       riga solo sotto i 18 anni con una cardiomiopatia segnata.
+     21. Accanto al flutter: 2019 ESC TSV, p. 681 (valore del CHA2DS2-VASc nel
+       flutter non stabilito; senza FA la soglia sembra piu' alta); ESC 2024,
+       § 9.14, p. 3371 (dopo l'ablazione FA nel 50-70%, rivalutazione a lungo
+       termine in tutti).
+     22. Eta' massima 110 per la clearance, come il Tool TV: a 150 anni sarebbe
+       negativa.
+     Giro 5 del medico, 08/11/2026 (DA-DECIDERE-3):
+     7. Le soglie che escludono, 15 e 30 di ClCr, leggono il valore non
+       arrotondato: 14,6 non da' le dosi, 29,6 non da' il dabigatran; il numero
+       vicino a 15 o a 30 si scrive col decimale. Le altre soglie restano
+       sull'intero.
+     8. «Grave» senza un numero = ClCr <30, dichiarato, sul testo letto il
+       03/10/2026: acenocumarolo controindicato nella compromissione renale grave
+       (4.2, 4.3), quindi sotto 30 e in dialisi nessuna dose, e senza clearance
+       «—»; eparina sodica, «patologie renali gravi» fra le controindicazioni:
+       nessuna dose da togliere, la ESC/EACTS 2025 resta accanto (D18).
+     15. Dominio dei campi, come il Tool Flutter: fuori dai limiti un numero vale
+       come mancante, e lo si dice. */
+  var SOGLIE = { etaMin:18, etaMax:110, a2:75, a1:65, apiEta:80, apiPeso:60, apiCrMg:1.5, apiCrUmol:133, dabiEta:80, dabiEtaCaso:75,
+                 edoPeso:60, cl15:15, cl30:30, cl50:50, clAlta:100, bmiAgg:30, avk75:75, egfr30:30,
+                 pesoMin:25, pesoMax:250, altMin:120, altMax:220, egfrMin:1, egfrMax:200, crMgMin:0.1, crMgMax:25, crUmolMin:20, crUmolMax:2000 };
   var UMOL = 88.4;   // umol/L per mg/dL di creatinina
 
   var DOAC = {
@@ -546,15 +592,45 @@ html.js.motore-ko #nomotore{display:block}
   // 03/10/2026).
   var STU = "scheda tecnica di eparina sodica, § 4.2–4.4", STE = "scheda tecnica di enoxaparina, § 4.2",
       V11 = "ESC/EACTS 2025 valvulopatie, Tab. 11, p. 4694";
+  var R30 = "ESC 2024, Rec. Table 30, p. 3371", S914 = "ESC 2024, § 9.14, p. 3371", P30 = "ESC 2024, p. 3330", S679 = "ESC 2019 TSV, p. 679", S681 = "ESC 2019 TSV, p. 681";
+  var RIGA_18 = "Sotto i 18 anni le classi sono quelle dell'adulto, la fonte non tratta il bambino: decide lo specialista.",
+      NO_MG = "sotto i 18 anni le dosi dell'adulto non valgono: lo strumento non calcola i mg",
+      ETA_CG = "età sotto i 18 anni: la Cockcroft-Gault è una formula dell'adulto";
 
   /* ═══ FUNZIONI PURE ═══════════════════════════════════════════════════ */
   function r1(x) { return Math.round(x * 10) / 10; }
   function arr(x) { return x === null ? null : Math.round(x); }
+  // Il rumore della virgola mobile si toglie dove si confronta il valore non arrotondato: 30,000000001 e' 30.
+  function pulito(x) { return x === null ? null : Math.round(x * 1e9) / 1e9; }
+  // Le soglie che escludono, 15 e 30, leggono il valore non arrotondato; un numero
+  // che l'intero porterebbe proprio su una delle due si scrive col decimale: «14,6», non «15».
+  var SOGLIE_CL = [15, 30];
+  function nfCl(x) {
+    var i, d, p, a = Math.round(x), y = pulito(x);
+    for (i = 0; i < SOGLIE_CL.length; i++) if (a === SOGLIE_CL[i] && y !== a) {
+      if (r1(y) !== a) return nf(y);
+      for (d = 2; d < 8; d++) { p = Math.pow(10, d); if (Math.round(y * p) / p !== a) return String(Math.round(y * p) / p).replace(".", ","); }
+    }
+    return nf(x, 0);
+  }
+  // Fuori dal dominio dello strumento un numero impossibile vale come mancante, e lo
+  // si dice (come il Tool Flutter). L'eta' sotto i 18 anni resta nel dominio: ha la sua regola.
+  function dominio(s) {
+    var o = [];
+    if (s.eta !== null && (s.eta < 0 || s.eta > SOGLIE.etaMax)) { o.push("età fuori scala (18–110 anni)"); s.eta = null; s.etaFuori = true; }
+    if (s.peso !== null && (s.peso < SOGLIE.pesoMin || s.peso > SOGLIE.pesoMax)) { o.push("peso fuori scala (25–250 kg)"); s.peso = null; s.pesoFuori = true; }
+    if (s.alt !== null && (s.alt < SOGLIE.altMin || s.alt > SOGLIE.altMax)) { o.push("altezza fuori scala (120–220 cm)"); s.alt = null; }
+    if (s.egfr !== null && (s.egfr < SOGLIE.egfrMin || s.egfr > SOGLIE.egfrMax)) { o.push("eGFR fuori scala (1–200)"); s.egfr = null; s.egfrFuori = true; }
+    return o;
+  }
+  function sotto18(s) { return s.eta !== null && s.eta < SOGLIE.etaMin; }
 
   function leggiCreat(v, u) {
     if (v === null) return { v:null, err:"" };
     if (u === "umol" && v < 20) return { v:null, err:"Creatinina " + String(v).replace(".", ",") + " µmol/L: valore incompatibile con l'unità scelta (era in mg/dL?). La clearance non si calcola." };
     if (u !== "umol" && v > 25) return { v:null, err:"Creatinina " + String(v).replace(".", ",") + " mg/dL: valore incompatibile con l'unità scelta (era in µmol/L?). La clearance non si calcola." };
+    if (u !== "umol" && v < SOGLIE.crMgMin) return { v:null, err:"Creatinina fuori scala (0,1–25 mg/dL): non usata. La clearance non si calcola." };
+    if (u === "umol" && v > SOGLIE.crUmolMax) return { v:null, err:"Creatinina fuori scala (20–2000 µmol/L): non usata. La clearance non si calcola." };
     return { v:v, err:"" };
   }
 
@@ -571,7 +647,7 @@ html.js.motore-ko #nomotore{display:block}
     if (s.pV) add("V", "vasculopatia", 1);
     if (s.eta !== null && s.eta >= SOGLIE.a1 && s.eta < SOGLIE.a2) add("A", "età 65–74 anni", 1);
     return { tot:tot, voci:v, esatto:!!(s.fatt && s.eta !== null), etaNota:s.eta !== null,
-             perche:s.eta === null ? "serve l'età (passo 2)" : (!s.fatt ? "conferma i fattori del passo 2" : "") };
+             perche:s.eta === null ? (s.etaFuori ? "età fuori scala (18–110 anni): il punteggio non la conta" : "serve l'età (passo 2)") : (!s.fatt ? "conferma i fattori del passo 2" : "") };
   }
 
   // Rec. Table 6, p. 3342; per le cardiomiopatie ESC 2023, Rec. Table 11,
@@ -582,6 +658,17 @@ html.js.motore-ko #nomotore{display:block}
     if (!s.fa) return { e:null, perche:"serve il tipo di FA (passo 1)" };
     if (!s.cond) return { e:null, perche:"conferma le condizioni del passo 1" };
     if (s.grav) return { e:"grav" };
+    // Flutter senza FA documentata: Rec. Table 30 (I B, non la I A della FA);
+    // a 1 punto IIa C, lettura dello strumento (Rec. Table 6, ESC 2019 p. 679);
+    // le cardiomiopatie come nella FA clinica: la ESC 2023 dice «FA o flutter».
+    if (s.fa === "flutter") {
+      if (s.cmp === "hcm") return { e:"si", via:"cmi", c:"I", l:"B" };
+      if (p.tot >= 2) return { e:"si", via:"flutter", c:"I", l:"B", almeno:!p.esatto };
+      if (s.cmp === "rcm") return { e:"forse", via:"rcm", c:"IIa", l:"C", almeno:!p.esatto };
+      if (!p.esatto) return { e:null, perche:p.perche };
+      if (p.tot === 1) return { e:"forse", via:"flutter", c:"IIa", l:"C" };
+      return { e:"zero", via:"flutter" };
+    }
     if (s.fa === "clinica") {
       if (s.cmp === "hcm") return { e:"si", via:"cmi", c:"I", l:"B" };
       if (p.tot >= 2) return { e:"si", via:"punti", c:"I", l:"A", almeno:!p.esatto };
@@ -626,9 +713,11 @@ html.js.motore-ko #nomotore{display:block}
   function clearance(s) {
     var o = { clcr:null, clAgg:null, bmi:null, ibw:null, pesoAgg:null, manca:[] };
     if (s.peso !== null && s.alt !== null) o.bmi = s.peso / Math.pow(s.alt / 100, 2);
-    if (s.eta === null) o.manca.push("età");
+    if (s.eta === null) o.manca.push(s.etaFuori ? "età fuori scala (18–110 anni)" : "età");
+    else if (sotto18(s)) o.manca.push(ETA_CG);
+    else if (s.eta > SOGLIE.etaMax) o.manca.push("età fuori scala (18–110 anni)");
     if (!s.sesso) o.manca.push("sesso");
-    if (s.peso === null) o.manca.push("peso");
+    if (s.peso === null) o.manca.push(s.pesoFuori ? "peso fuori scala (25–250 kg)" : "peso");
     if (s.creat === null) o.manca.push("creatinina");
     if (o.manca.length) return o;
     var crMg = s.ucr === "umol" ? s.creat / UMOL : s.creat, f = s.sesso === "f" ? 0.85 : 1;
@@ -645,12 +734,13 @@ html.js.motore-ko #nomotore{display:block}
   function rene(s) { return { cl:clearance(s), dialisi:s.dial, egfr:s.dial ? null : s.egfr }; }
 
   // Le fasce di clearance che contano per ciascun DOAC (Tab. 11 e schede
-  // tecniche), lette sul valore arrotondato all'intero.
+  // tecniche): le soglie che escludono, 15 e 30, sul valore non arrotondato; le
+  // altre sull'intero (scelta del medico, 08/11/2026). Si passa il valore pieno.
   var FASCE = {
-    api:  function (c) { return c < 15 ? "<15" : (c < 30 ? "15–29" : "≥30"); },
-    dabi: function (c) { return c < 30 ? "<30" : (c <= 50 ? "30–50" : ">50"); },
-    edo:  function (c) { return c < 15 ? "<15" : (c <= 50 ? "15–50" : ">50"); },
-    riva: function (c) { return c < 15 ? "<15" : (c < 50 ? "15–49" : "≥50"); }
+    api:  function (c) { return pulito(c) < 15 ? "<15" : (arr(c) < 30 ? "15–29" : "≥30"); },
+    dabi: function (c) { return pulito(c) < 30 ? "<30" : (arr(c) <= 50 ? "30–50" : ">50"); },
+    edo:  function (c) { return pulito(c) < 15 ? "<15" : (arr(c) <= 50 ? "15–50" : ">50"); },
+    riva: function (c) { return pulito(c) < 15 ? "<15" : (arr(c) < 50 ? "15–49" : "≥50"); }
   };
 
   function interazioni(s, k) {
@@ -670,13 +760,16 @@ html.js.motore-ko #nomotore{display:block}
   function escludi(o, st, perche, fonte) { o.stato = st; o.perche = perche; o.fonte = fonte; return o; }
   function serveCl(o, rn) { o.perche = "mancano: " + rn.cl.manca.join(", ") + " (passi 2 e 5)"; return o; }
   function serveFarm(o) { o.perche = "conferma le terapie del passo 6: possono cambiare la dose o escludere la molecola"; return o; }
+  // Sotto i 18 anni nessuna dose dell'adulto, nemmeno quelle fisse: «—» con la ragione.
+  function noMg(o) { o.noMg = true; o.perche = NO_MG; o.evita = o.inter.ev.length > 0; return o; }
 
   function apixaban(s, rn) {
     var o = nuovo("api", s), c, t = [];
+    if (sotto18(s)) return noMg(o);
     if (rn.dialisi) return escludi(o, "nr", "In dialisi: non raccomandato, per mancanza di esperienza clinica", "scheda tecnica di apixaban, § 4.2");
     if (rn.cl.clcr === null) return serveCl(o, rn);
     c = arr(rn.cl.clcr);
-    if (c < SOGLIE.cl15) return escludi(o, "nr", "ClCr <15: non raccomandato, per mancanza di esperienza clinica", "scheda tecnica di apixaban, § 4.2");
+    if (pulito(rn.cl.clcr) < SOGLIE.cl15) return escludi(o, "nr", "ClCr <15: non raccomandato, per mancanza di esperienza clinica", "scheda tecnica di apixaban, § 4.2");
     o.tre = [s.eta >= SOGLIE.apiEta, s.peso <= SOGLIE.apiPeso, s.ucr === "umol" ? s.creat >= SOGLIE.apiCrUmol : s.creat >= SOGLIE.apiCrMg];
     if (o.tre[0]) t.push("età ≥80 anni");
     if (o.tre[1]) t.push("peso ≤60 kg");
@@ -693,11 +786,12 @@ html.js.motore-ko #nomotore{display:block}
   // (testo, p. 3344) niente dabigatran.
   function dabigatran(s, rn) {
     var o = nuovo("dabi", s), c, rac = [], caso = [];
+    if (sotto18(s)) return noMg(o);
     if (rn.dialisi) return escludi(o, "ci", "In dialisi (ClCr <30): controindicato", "scheda tecnica di dabigatran, § 4.3");
     if (rn.cl.clcr === null) return serveCl(o, rn);
     c = arr(rn.cl.clcr);
-    if (c < SOGLIE.cl30) { o.incoer = rn.egfr !== null && rn.egfr >= SOGLIE.egfr30; return escludi(o, "ci", "ClCr <30: controindicato", "scheda tecnica di dabigatran, § 4.3"); }
-    if (rn.egfr === null) { o.incoer = "manca"; o.perche = "serve l'eGFR: il testo della fonte lo controindica con eGFR <30 (p. 3344)"; return o; }
+    if (pulito(rn.cl.clcr) < SOGLIE.cl30) { o.incoer = rn.egfr !== null && rn.egfr >= SOGLIE.egfr30; return escludi(o, "ci", "ClCr <30: controindicato", "scheda tecnica di dabigatran, § 4.3"); }
+    if (rn.egfr === null) { o.incoer = "manca"; o.perche = (s.egfrFuori ? "eGFR fuori scala (1–200), non usato" : "serve l'eGFR") + ": il testo della fonte lo controindica con eGFR <30 (p. 3344)"; return o; }
     if (rn.egfr < SOGLIE.egfr30) { o.incoer = true; return escludi(o, "ci", "eGFR <30: controindicato secondo il testo della fonte, anche con ClCr ≥30 (lettura prudente)", P44); }
     if (!s.farm) return serveFarm(o);
     if (o.inter.ci.length) return escludi(o, "ci", "Controindicato con " + o.inter.ci.join(", "), "scheda tecnica di dabigatran, § 4.3");
@@ -714,10 +808,11 @@ html.js.motore-ko #nomotore{display:block}
 
   function edoxaban(s, rn) {
     var o = nuovo("edo", s), c, t = [];
+    if (sotto18(s)) return noMg(o);
     if (rn.dialisi) return escludi(o, "nr", "In dialisi: non raccomandato", "scheda tecnica di edoxaban, § 4.2");
     if (rn.cl.clcr === null) return serveCl(o, rn);
     c = arr(rn.cl.clcr);
-    if (c < SOGLIE.cl15) return escludi(o, "nr", "ClCr <15: non raccomandato", "scheda tecnica di edoxaban, § 4.2");
+    if (pulito(rn.cl.clcr) < SOGLIE.cl15) return escludi(o, "nr", "ClCr <15: non raccomandato", "scheda tecnica di edoxaban, § 4.2");
     if (c <= SOGLIE.cl50) t.push("ClCr 15–50");
     if (s.peso <= SOGLIE.edoPeso) t.push("peso ≤60 kg");
     if (s.farm && o.inter.rid.length) t.push(o.inter.rid.join(", ") + " in corso");
@@ -731,10 +826,11 @@ html.js.motore-ko #nomotore{display:block}
 
   function rivaroxaban(s, rn) {
     var o = nuovo("riva", s), c;
+    if (sotto18(s)) return noMg(o);
     if (rn.dialisi) return escludi(o, "nr", "In dialisi (ClCr <15): sconsigliato, e non è dializzabile", "scheda tecnica di rivaroxaban, § 4.2, 5.2");
     if (rn.cl.clcr === null) return serveCl(o, rn);
     c = arr(rn.cl.clcr);
-    if (c < SOGLIE.cl15) return escludi(o, "nr", "ClCr <15: sconsigliato", "scheda tecnica di rivaroxaban, § 4.2");
+    if (pulito(rn.cl.clcr) < SOGLIE.cl15) return escludi(o, "nr", "ClCr <15: sconsigliato", "scheda tecnica di rivaroxaban, § 4.2");
     if (!s.farm) return serveFarm(o);
     o.evita = o.inter.ev.length > 0; o.fonte = T11;
     if (c < SOGLIE.cl50) { o.stato = "ridotta"; o.crit = ["ClCr 15–49"]; o.cautela = c < SOGLIE.cl30; return o; }
@@ -755,7 +851,7 @@ html.js.motore-ko #nomotore{display:block}
   function passo(t, att) { return '<div class="passo' + (att ? " att" : "") + '"><span class="ico">' + (att ? "→" : "·") + '</span><span class="tx">' + t + "</span></div>"; }
   function dv() { return '<span class="dv">DA VERIFICARE</span>'; }
   function ckRiga(si, t) { return '<div class="ck"><span class="s ' + (si ? "si" : "no") + '">' + (si ? "✓" : "·") + "</span><span>" + t + "</span></div>"; }
-  function kcl(c) { c = arr(c); return c < 15 ? "k4" : (c < 30 ? "k3" : (c <= 50 ? "k2" : "k1")); }
+  function kcl(c) { var p = pulito(c), a = arr(c); return p < 15 ? "k4" : (p < 30 ? "k3" : (a <= 50 ? "k2" : "k1")); }
   function kPunti(n) { return n >= 2 ? "k4" : (n === 1 ? "k2" : "k0"); }
 
   function S() {
@@ -765,6 +861,7 @@ html.js.motore-ko #nomotore{display:block}
     s.cmp = radio("cmp"); if (s.cmp === "no") s.cmp = "";
     s.fa = radio("fa"); s.ter = radio("ter") || "no"; s.ttr = radio("ttr"); s.sesso = radio("sesso"); s.ucr = radio("ucr") || "mg";
     s.eta = num("eta"); s.peso = num("peso"); s.alt = num("alt"); s.egfr = num("egfr");
+    s.fuori = dominio(s);
     var cr = leggiCreat(num("creat"), s.ucr);
     s.creat = cr.v; s.creatErr = cr.err;
     return s;
@@ -777,7 +874,7 @@ html.js.motore-ko #nomotore{display:block}
          chip(kPunti(p.tot), p.esatto ? (p.tot >= 2 ? "rischio elevato" : (p.tot === 1 ? "rischio elevato da considerare" : "nessun fattore")) : "almeno " + p.tot) + "</div>";
     righe = [["C", "scompenso", s.pC, 1], ["H", "ipertensione", s.pH, 1], ["D", "diabete", s.pD, 1], ["S", "ictus, TIA o tromboembolia arteriosa", s.pS, 2], ["V", "vasculopatia", s.pV, 1]];
     for (i = 0; i < righe.length; i++) { r = righe[i]; h += ckRiga(r[2], "<b>" + r[0] + "</b> · " + r[1] + (r[2] ? " +" + r[3] : "")); }
-    if (s.eta === null) h += '<div class="ck"><span class="s ig">?</span><span><b>A</b> · età non indicata</span></div>';
+    if (s.eta === null) h += '<div class="ck"><span class="s ig">?</span><span><b>A</b> · ' + (s.etaFuori ? "età fuori scala, non usata" : "età non indicata") + "</span></div>";
     else if (s.eta >= SOGLIE.a2) h += ckRiga(true, "<b>A</b> · età ≥75 anni +2");
     else if (s.eta >= SOGLIE.a1) h += ckRiga(true, "<b>A</b> · età 65–74 anni +1");
     else h += ckRiga(false, "<b>A</b> · età sotto i 65 anni");
@@ -787,14 +884,35 @@ html.js.motore-ko #nomotore{display:block}
     return h;
   }
 
+  // Accanto, sempre con la voce «flutter senza FA documentata».
+  function accantoFlutter() {
+    return nota("info", "<b>Accanto · ESC 2019 TSV.</b> Flutter con FA: anticoagulante come nella FA " + corPill("I", "B") + "; flutter senza FA: da considerare, ma la soglia per iniziare non è stabilita " + corPill("IIa", "C") + pgs(S679) + ". Il valore del CHA₂DS₂-VASc nel flutter non è stabilito, e senza FA la soglia per iniziare sembra più alta che nella FA" + pgs(S681) + ".") +
+      nota("info", "<b>Dopo l'ablazione · ESC 2024.</b> La FA compare nel 50–70%: rivalutazione a lungo termine per tutti" + pgs(S914) + ".") +
+      nota("info", "<b>Dopo il 2024:</b> Eyob Fesseha 2026, registro finlandese, solo flutter contro sola FA, ictus più basso, rapporto aggiustato 0,60 (0,49–0,74); non cambia la classe (<i>Eur Heart J</i> 2026, doi:10.1093/eurheartj/ehag681, PMID 42690735).");
+  }
+
   function testoInd(s, p, ind) {
-    var h = "";
+    var h = testoInd0(s, p, ind);
+    if (sotto18(s) && s.cmp) h += nota("info", "Nel bambino con cardiomiopatia genetica la FA è rara, e non ci sono dati sul punteggio né sull'anticoagulante" + pgs(C41) + ".");
+    return s.fa === "flutter" ? h + accantoFlutter() : h;
+  }
+
+  function testoInd0(s, p, ind) {
+    var h = "", fl = s.fa === "flutter";
     if (!ind.e) return '<div class="esito">' + chip("kx", "indicazione —") + '<span class="muted">' + ind.perche + "</span></div>";
     if (ind.e === "grav") return '<div class="esito"><span class="big">Gravidanza: lo strumento non vale</span></div>' +
       nota("stop", "Nella FA in gravidanza a rischio tromboembolico elevato: anticoagulazione terapeutica con <b>EBPM o AVK</b>, l'AVK non nel primo trimestre né dalla 36ª settimana " + corPill("I", "C") + pgs(R28) + ". <b>I DOAC non sono raccomandati in gravidanza</b>, per la sicurezza" + pgs(P69) + ". Il rischio si valuta con le stesse regole che fuori dalla gravidanza" + pgs(P69) + "; le dosi la fonte non le dà.");
     if (ind.e === "si") {
       h += '<div class="esito"><span class="big">Anticoagulante raccomandato</span>' + corPill(ind.c, ind.l) + "</div>";
-      if (ind.via === "cmi") {
+      if (ind.via === "cmi" && fl) {
+        h += passo("Flutter con <b>cardiomiopatia ipertrofica o amiloidosi cardiaca</b>: anticoagulante a tutti, se non controindicato, qualunque sia il punteggio " + corPill("I", "B") + pgs(C11a) + ": la riga della ESC 2023 dice «FA o flutter».", true);
+        h += passo("La ESC 2024 dà la stessa classe per la FA " + corPill("I", "B") + pgs(R6) + ": il punteggio stima male l'ictus nella HCM e nell'amiloidosi da transtiretina" + pgs(C41) + ".");
+      } else if (ind.via === "flutter") {
+        h += passo("CHA₂DS₂-VA " + (ind.almeno ? "di almeno " : "") + p.tot + ": un punteggio di 2 o più indica un rischio tromboembolico elevato " + corPill("I", "C") + pgs(R6) + ". La riga del flutter dice «rischio elevato» senza un punteggio: lo si stima come nella FA, lettura dello strumento.", true);
+        h += passo("Flutter a rischio tromboembolico elevato: anticoagulante orale per prevenire ictus e tromboembolia " + corPill("I", "B") + pgs(R30) + ". È la classe del flutter, non la I A della FA clinica" + pgs(R6) + ".");
+        if (s.cmp === "rcm") h += passo("<b>Cardiomiopatia restrittiva</b>: la ESC 2023 dà l'anticoagulante da considerare qualunque sia il punteggio " + corPill("IIa", "C") + pgs(C11b) + ", per «FA o flutter»; qui il punteggio porta già alla I B del flutter.");
+        if (ind.almeno) h += nota("info", "Il punteggio esatto aspetta la conferma del passo 2, ma la classe non cambia: è già 2 o più.");
+      } else if (ind.via === "cmi") {
         h += passo("FA con <b>cardiomiopatia ipertrofica o amiloidosi cardiaca</b>: anticoagulante a tutti, qualunque sia il punteggio " + corPill("I", "B") + pgs(R6) + ".", true);
         h += passo("La ESC 2023 sulle cardiomiopatie dice lo stesso, con la stessa classe, anche per il flutter e se non controindicato " + corPill("I", "B") + pgs(C11a) + ": il punteggio stima male l'ictus nella HCM e nell'amiloidosi da transtiretina" + pgs(C41) + ".");
       } else {
@@ -805,10 +923,16 @@ html.js.motore-ko #nomotore{display:block}
       }
     } else if (ind.e === "forse" && ind.via === "rcm") {
       h += '<div class="esito"><span class="big">Anticoagulante da considerare</span>' + corPill("IIa", "C") + "</div>";
-      h += passo("FA con <b>cardiomiopatia restrittiva</b>: anticoagulante da considerare, qualunque sia il punteggio, se non controindicato " + corPill("IIa", "C") + pgs(C11b) + ". La FA ESC 2024 non ha una riga per la restrittiva" + pgs(R6) + ": la classe è quella della ESC 2023.", true);
+      h += passo((fl ? "Flutter" : "FA") + " con <b>cardiomiopatia restrittiva</b>: anticoagulante da considerare, qualunque sia il punteggio, se non controindicato " + corPill("IIa", "C") + pgs(C11b) + (fl ? ": la riga dice «FA o flutter»" : "") + ". La FA ESC 2024 non ha una riga per la restrittiva" + pgs(R6) + ": la classe è quella della ESC 2023.", true);
       h += passo("È più bassa della I B dell'ipertrofica e dell'amiloidosi" + pgs(C11a) + ", e la tabella della stessa fonte dice «sempre»: vedi le incoerenze, in fondo.");
-      if (ind.almeno) h += nota("info", "Il punteggio esatto aspetta la conferma del passo 2: la IIa C vale comunque, e con 2 o più la classe sale alla I A della 2024" + pgs(R6) + ".");
-      else if (p.tot === 1) h += passo("Il CHA₂DS₂-VA 1 darebbe la stessa classe anche senza la cardiomiopatia " + corPill("IIa", "C") + pgs(R6) + ".");
+      if (ind.almeno) h += nota("info", "Il punteggio esatto aspetta la conferma del passo 2: la IIa C vale comunque, e con 2 o più la classe sale alla " + (fl ? "I B del flutter" + pgs(R30) : "I A della 2024" + pgs(R6)) + ".");
+      else if (p.tot === 1) h += passo("Il CHA₂DS₂-VA 1 darebbe la stessa classe anche senza la cardiomiopatia " + corPill("IIa", "C") + pgs(R6) + (fl ? ", lettura dello strumento" : "") + ".");
+    } else if (ind.e === "forse" && ind.via === "flutter") {
+      h += '<div class="esito"><span class="big">Anticoagulante da considerare</span>' + corPill("IIa", "C") + "</div>";
+      h += passo("CHA₂DS₂-VA 1: va considerato un indicatore di rischio tromboembolico elevato " + corPill("IIa", "C") + pgs(R6) + ", e senza FA la ESC 2019 dice di considerare l'anticoagulante, con la soglia non stabilita " + corPill("IIa", "C") + pgs(S679) + ". Le due insieme danno la IIa C: <b>lettura dello strumento</b> (scelta del medico, 08/11/2026).", true);
+    } else if (ind.e === "zero" && ind.via === "flutter") {
+      h += '<div class="esito"><span class="big">Anticoagulante non indicato dal punteggio</span></div>';
+      h += passo("CHA₂DS₂-VA 0: né la riga del flutter, che chiede un rischio elevato" + pgs(R30) + ", né il punteggio" + pgs(R6) + " lo indicano. La ESC 2019 dice che senza FA va considerato e che la soglia per iniziare non è stabilita" + pgs(S679) + "; e più della metà di chi ha un flutter svilupperà una FA" + pgs(P30) + ". Si pesano gli altri modificatori (passo 2).", true);
     } else if (ind.e === "forse") {
       h += '<div class="esito"><span class="big">Anticoagulante da considerare</span>' + corPill("IIa", "C") + "</div>";
       h += passo("CHA₂DS₂-VA 1: va considerato un indicatore di rischio tromboembolico elevato " + corPill("IIa", "C") + pgs(R6) + ", con una decisione centrata sul paziente e condivisa" + pgs(P41) + ".", true);
@@ -830,26 +954,35 @@ html.js.motore-ko #nomotore{display:block}
       h += '<div class="esito"><span class="big">DOAC non indicato dal punteggio</span></div>';
       h += passo("CHA₂DS₂-VA 0: il rischio tromboembolico non risulta elevato, e la IIb B vale solo con rischio elevato" + pgs(R6) + ". Si pesano comunque gli altri modificatori (passo 2).", true);
     }
-    if (s.fa === "clinica" && s.cmp === "altra" && (ind.e === "si" || ind.e === "forse" || ind.e === "zero")) {
+    if ((s.fa === "clinica" || fl) && s.cmp === "altra" && (ind.e === "si" || ind.e === "forse" || ind.e === "zero")) {
       var c23 = p.tot >= 2 ? corPill("I", "B") + pgs(C11a) : (p.tot === 1 ? corPill("IIa", "B") + pgs(C11b) : "nessuna riga: la 2023 non dice di anticoagulare" + pgs(C11));
-      h += nota("info", "<b>Confronto · ESC 2023, cardiomiopatie.</b> Nella DCM, NDLVC o ARVC la 2023 decide con il CHA₂DS₂-VASc: anticoagulante raccomandato con ≥2 nell'uomo o ≥3 nella donna " + corPill("I", "B") + pgs(C11a) + ", da considerare con 1 nell'uomo o 2 nella donna " + corPill("IIa", "B") + pgs(C11b) + ". Il VASc è il VA con un punto in più nella donna: le soglie coincidono, e <b>la decisione resta quella del punteggio</b>; cambiano classe e livello. Qui CHA₂DS₂-VA " + (ind.almeno ? "di almeno " : "") + p.tot + " → nella 2023 " + c23 + ".");
+      h += nota("info", "<b>Confronto · ESC 2023, cardiomiopatie.</b> Nella DCM, NDLVC o ARVC la 2023 decide con il CHA₂DS₂-VASc: anticoagulante raccomandato con ≥2 nell'uomo o ≥3 nella donna " + corPill("I", "B") + pgs(C11a) + ", da considerare con 1 nell'uomo o 2 nella donna " + corPill("IIa", "B") + pgs(C11b) + ". Il VASc è il VA con un punto in più nella donna: le soglie coincidono, e <b>la decisione resta quella del punteggio</b>" + (fl ? "; le righe dicono «FA o flutter»" : "; cambiano classe e livello") + ". Qui CHA₂DS₂-VA " + (ind.almeno ? "di almeno " : "") + p.tot + " → nella 2023 " + c23 + ".");
     }
     if (s.fa === "sub") {
       h += passo("Qualunque sia la scelta, la FA subclinica entra nel percorso AF-CARE completo: diventa FA clinica nel 6–9% l'anno" + pgs(P46) + ".");
       if (s.cmp === "hcm") h += nota("info", "Cardiomiopatia ipertrofica o amiloidosi: la I B parla di «FA»" + pgs(R6) + ", e la ESC 2023 di «FA o flutter»" + pgs(C11a) + "; se valga anche per la subclinica da dispositivo nessuna delle due lo dice — «—», scelta clinica.");
       else if (s.cmp) h += nota("info", (s.cmp === "rcm" ? "Cardiomiopatia restrittiva" : "DCM, NDLVC o ARVC") + ": le righe della ESC 2023 parlano di «FA o flutter»" + pgs(s.cmp === "rcm" ? C11b : C11) + ", e la subclinica da dispositivo non la nominano: qui vale la IIb B della FA ESC 2024.");
+    } else if (fl) {
+      h += passo("Nella FA un antiaggregante non sostituisce l'anticoagulante " + corPill("III", "A") + pgs(R6) + "; per il flutter la fonte non ha una riga sua: come nella FA, lettura dello strumento.");
     } else {
       h += passo("Il tipo temporale — parossistica, persistente, permanente — non decide " + corPill("III", "B") + pgs(R6) + ".");
       h += passo("Un antiaggregante non sostituisce l'anticoagulante " + corPill("III", "A") + pgs(R6) + ": o si anticoagula, o non si dà niente e si rivaluta.");
     }
-    if (s.nbte) h += nota("info", "<b>NBTE · ESC 2023 endocardite</b> (casella al passo 4). Con un'endocardite trombotica non batterica l'anticoagulante va considerato in tutti, qualunque sia il punteggio, pesato sul rischio emorragico del singolo" + pgs(E12 + ", testo senza classe") + "; e si cura la causa — lupus, tumore —, decisiva contro le recidive" + pgs(E12a) + ". Per la sola sindrome antifosfolipidica la ESC 2023 non dice chi anticoagulare: decide la FA." + (s.fa === "sub" ? " La IIb B della FA subclinica parla di un DOAC: qui la molecola è l'AVK o l'eparina (passo 4)." : ""));
+    if (s.nbte) h += nota("info", "<b>NBTE · ESC 2023 endocardite</b> (casella al passo 4). Con un'endocardite trombotica non batterica l'anticoagulante va considerato in tutti, qualunque sia il punteggio, pesato sul rischio emorragico del singolo" + pgs(E12 + ", testo senza classe") + "; e si cura la causa — lupus, tumore —, decisiva contro le recidive" + pgs(E12a) + ". Per la sola sindrome antifosfolipidica la ESC 2023 non dice chi anticoagulare: decide " + (fl ? "il flutter" : "la FA") + "." + (s.fa === "sub" ? " La IIb B della FA subclinica parla di un DOAC: qui la molecola è l'AVK o l'eparina (passo 4)." : ""));
     return h;
   }
 
   function avkTesto(s) {
-    var h = "", i, f, d;
-    h += passo("<b>Warfarin</b>: dose titolata sull'INR, che la fonte non dà. Inizio 2,5–5 mg al giorno senza carico, mantenimento per lo più 2,5–10 mg al giorno" + pgs("scheda tecnica di warfarin, § 4.2") + ". Rene: nessun aggiustamento, INR più frequente; calcifilassi soprattutto in dialisi" + pgs("scheda tecnica di warfarin, § 4.2, 4.4") + ".");
-    h += passo("<b>Acenocumarolo</b>: inizio 2–4 mg al giorno senza carico (o 6 mg il primo giorno e 4 mg il secondo), mantenimento 1–8 mg al giorno" + pgs("scheda tecnica di acenocumarolo, § 4.2") + ". Rene: controindicato nella compromissione renale grave, senza una soglia" + pgs("scheda tecnica di acenocumarolo, § 4.2, 4.3") + " " + dv() + " la soglia di «grave».");
+    var h = "", i, f, d, u18 = sotto18(s), no = ' — <span class="muted">' + NO_MG + "</span>";
+    h += passo("<b>Warfarin</b>:" + (u18 ? no : " dose titolata sull'INR, che la fonte non dà. Inizio 2,5–5 mg al giorno senza carico, mantenimento per lo più 2,5–10 mg al giorno" + pgs("scheda tecnica di warfarin, § 4.2")) + ". Rene: nessun aggiustamento, INR più frequente; calcifilassi soprattutto in dialisi" + pgs("scheda tecnica di warfarin, § 4.2, 4.4") + ".");
+    // «Grave» = ClCr <30, dichiarato (scelta del medico, 08/11/2026): la conseguenza e' quella della scheda, controindicato.
+    var rn = rene(s), cl = pulito(rn.cl.clcr), ST_ACE = pgs("scheda tecnica di acenocumarolo, § 4.2, 4.3"),
+        GRAVE = "«grave» senza un numero nella scheda: ClCr &lt;30, lettura nostra (scelta del medico, 08/11/2026)",
+        DOSE_ACE = " inizio 2–4 mg al giorno senza carico (o 6 mg il primo giorno e 4 mg il secondo), mantenimento 1–8 mg al giorno" + pgs("scheda tecnica di acenocumarolo, § 4.2");
+    if (u18) h += passo("<b>Acenocumarolo</b>:" + no + ". Rene: controindicato nella compromissione renale grave, senza una soglia" + ST_ACE + ": " + GRAVE + ".");
+    else if (rn.dialisi || (cl !== null && cl < SOGLIE.cl30)) h += passo("<b>Acenocumarolo</b>: <b>controindicato, nessuna dose</b>: " + (rn.dialisi ? "in dialisi" : "ClCr " + nfCl(rn.cl.clcr) + " mL/min") + ", compromissione renale grave" + ST_ACE + "; " + GRAVE + ".");
+    else if (cl === null) h += passo("<b>Acenocumarolo</b>: — <span class=\"muted\">serve la clearance (mancano: " + rn.cl.manca.join(", ") + "): sotto 30 è controindicato, e lo strumento non dà la dose</span>. Rene: controindicato nella compromissione renale grave, senza una soglia" + ST_ACE + ": " + GRAVE + ".");
+    else h += passo("<b>Acenocumarolo</b>:" + DOSE_ACE + ". Rene: controindicato nella compromissione renale grave, senza una soglia" + ST_ACE + ": " + GRAVE + "; qui ClCr " + nfCl(rn.cl.clcr) + " mL/min.");
     for (i = 0; i < FARMACI.length; i++) {
       f = FARMACI[i];
       if (!s[f]) continue;
@@ -869,7 +1002,7 @@ html.js.motore-ko #nomotore{display:block}
   // (D18, decisione del medico del 24/10/2026, come i Tool INR e
   // Antitrombotici), con accanto la scheda tecnica; l'EBPM dalla sua scheda.
   function reneUFH() {
-    return "<b>eparina non frazionata</b>: è l'eparina del rene grave, quella che la ESC/EACTS 2025 sulle valvulopatie usa nella CKD stadio IV–V" + pgs(V11) + "; accanto, la scheda tecnica non dà un aggiustamento della dose, ma mette fra le controindicazioni le «patologie renali gravi», senza una soglia, e chiede di controllare il potassio nella malattia renale cronica" + pgs(STU) + " " + dv() + " la soglia di «grave»";
+    return "<b>eparina non frazionata</b>: è l'eparina del rene grave, quella che la ESC/EACTS 2025 sulle valvulopatie usa nella CKD stadio IV–V" + pgs(V11) + "; accanto, la scheda tecnica non dà un aggiustamento della dose, ma mette fra le controindicazioni le «patologie renali gravi», senza una soglia, e chiede di controllare il potassio nella malattia renale cronica" + pgs(STU) + ". «Grave» senza un numero: ClCr &lt;30, lettura nostra (scelta del medico, 08/11/2026); così la scheda la controindica proprio dove la ESC/EACTS 2025 la usa, e le due restano accanto (decisione del medico, 24/10/2026)";
   }
   function reneEBPM() {
     return "<b>EBPM</b>, nella scheda dell'enoxaparina: ClCr 30–80 nessun aggiustamento; 15–30 una sola somministrazione al giorno; sotto 15 non raccomandata, salvo l'emodialisi; la scheda non dice con quale formula stimare la clearance" + pgs(STE);
@@ -878,14 +1011,14 @@ html.js.motore-ko #nomotore{display:block}
   // «Si continua» (§ 9.1) vale per l'anticoagulante che ha gia' un'indicazione:
   // qui la FA la da' quando il passo 3 e' «raccomandato» o, nella subclinica,
   // «DOAC da considerare» (decisione del medico, 24/10/2026).
-  function testoEI(ind) {
-    var certa = ind.e === "si" || ind.e === "subsi";
+  function testoEI(s, ind) {
+    var certa = ind.e === "si" || ind.e === "subsi", fl = s.fa === "flutter", ar = fl ? "il flutter" : "la FA";
     var h = '<div class="esito">' + chip("k3", "endocardite infettiva · ESC 2023") + "</div>";
     h += passo("<b>Sanguinamento maggiore</b>, emorragia intracranica compresa: <b>interrompere</b> l'anticoagulante, e l'antiaggregante se c'è " + corPill("I", "C") + pgs(E22) + ". Sul passaggio all'eparina dopo un sanguinamento cerebrale la fonte è incoerente: vedi le incoerenze, in fondo.", true);
     h += passo("Senza ictus, se la <b>chirurgia è probabile</b> (per esempio endocardite da <i>S. aureus</i>): l'anticoagulante orale, DOAC o AVK, lascia il posto all'<b>eparina non frazionata</b>, sotto stretto monitoraggio " + corPill("IIa", "C") + pgs(E22) + ".", true);
-    if (certa) h += passo("Altrimenti, nell'endocardite sinistra, l'anticoagulante che aveva già un'indicazione — qui la FA — <b>si continua</b>, se non ci sono altre controindicazioni" + pgs(E91 + ", testo senza classe") + ".");
-    else h += passo("Altrimenti, nell'endocardite sinistra, l'anticoagulante si continua <b>solo se ha già un'indicazione</b>, e se non ci sono altre controindicazioni" + pgs(E91 + ", testo senza classe") + ": qui la FA " + (ind.e ? "non dà un'indicazione certa" : "non ha ancora un'indicazione decisa") + " (passo 3).");
-    h += passo("L'endocardite da sola non è un'indicazione all'anticoagulante, e nessun dato sostiene di iniziarlo per curare o prevenire l'ictus dell'endocardite" + pgs(E1211) + ". Se la FA è nuova e l'anticoagulante non c'era, la ESC 2023 non dice se cominciarlo durante l'endocardite: prove di livello basso, si decide nell'Endocarditis Team" + pgs(E1211) + ".");
+    if (certa) h += passo("Altrimenti, nell'endocardite sinistra, l'anticoagulante che aveva già un'indicazione — qui " + ar + " — <b>si continua</b>, se non ci sono altre controindicazioni" + pgs(E91 + ", testo senza classe") + ".");
+    else h += passo("Altrimenti, nell'endocardite sinistra, l'anticoagulante si continua <b>solo se ha già un'indicazione</b>, e se non ci sono altre controindicazioni" + pgs(E91 + ", testo senza classe") + ": qui " + ar + " " + (ind.e ? "non dà un'indicazione certa" : "non ha ancora un'indicazione decisa") + " (passo 3).");
+    h += passo("L'endocardite da sola non è un'indicazione all'anticoagulante, e nessun dato sostiene di iniziarlo per curare o prevenire l'ictus dell'endocardite" + pgs(E1211) + ". " + (fl ? "Se il flutter è nuovo" : "Se la FA è nuova") + " e l'anticoagulante non c'era, la ESC 2023 non dice se cominciarlo durante l'endocardite: prove di livello basso, si decide nell'Endocarditis Team" + pgs(E1211) + ".");
     h += passo("Trombolisi: <b>no</b> " + corPill("III", "C") + pgs(E22) + ".");
     h += nota("info", "<b>Dove la ESC 2023 tace.</b> Fra DOAC e AVK durante l'endocardite non sceglie, e la dose dell'eparina non la dà " + dv() + ": molecola e dosi qui sotto sono quelle della FA ESC 2024, per l'anticoagulante orale che si continua. Rene — " + reneUFH() + ". Il percorso completo è nella scheda 13, endocardite.");
     return h + '<div class="sub-t">La molecola della FA, ESC 2024</div>';
@@ -906,7 +1039,7 @@ html.js.motore-ko #nomotore{display:block}
 
   function testoMol(s, mol, ind) {
     var h = testoMol24(s, mol, ind);
-    if (s.ei && mol.m !== "grav") h = testoEI(ind) + h;
+    if (s.ei && mol.m !== "grav") h = testoEI(s, ind) + h;
     return h;
   }
 
@@ -914,6 +1047,8 @@ html.js.motore-ko #nomotore{display:block}
     var h = "";
     if (!mol.m) return '<div class="esito">' + chip("kx", "molecola —") + '<span class="muted">' + mol.perche + "</span></div>";
     if (mol.m === "grav") return nota("spenta", "Gravidanza: niente DOAC" + pgs(P69) + "; EBPM o AVK, al passo 3.");
+    var fl = s.fa === "flutter";
+    if (fl) h += nota("info", "<b>Flutter senza FA documentata: molecola come nella FA, lettura dello strumento.</b> Per prevenire la tromboembolia nel flutter la ESC 2024 rimanda alla sua sezione 6" + pgs(S914) + ": le classi qui sotto sono quelle della FA.");
     if (ind.e && ind.e !== "si" && ind.e !== "subsi") h += nota("info", "Senza un'indicazione certa, molecola e dose valgono solo se si decide di anticoagulare.");
     if (mol.m === "nbte") return h + testoNbte(s, mol);
     if (mol.m === "avk") {
@@ -926,8 +1061,8 @@ html.js.motore-ko #nomotore{display:block}
       return h + avkTesto(s);
     }
     if (mol.m === "doac") {
-      h += '<div class="esito"><span class="big">DOAC</span>' + corPill("I", "A") + "</div>";
-      h += passo("DOAC preferiti all'AVK per prevenire ictus e tromboembolia " + corPill("I", "A") + pgs(R7) + ". Bioprotesi, anche mitralica, TAVI, insufficienza mitralica e le altre valvulopatie non lo cambiano: «FA valvolare» è un termine da abbandonare" + pgs(P44) + ".", true);
+      h += '<div class="esito"><span class="big">DOAC</span>' + (fl ? chip("k1", "come nella FA") : corPill("I", "A")) + "</div>";
+      h += passo((fl ? "Nella FA, DOAC" : "DOAC") + " preferiti all'AVK per prevenire ictus e tromboembolia " + corPill("I", "A") + pgs(R7) + ". Bioprotesi, anche mitralica, TAVI, insufficienza mitralica e le altre valvulopatie non lo cambiano: «FA valvolare» è un termine da abbandonare" + pgs(P44) + ".", true);
       if (mol.passa) h += passo("In AVK con TTR &lt;70%: <b>passare al DOAC</b> " + corPill("I", "B") + pgs(R7) + ", dopo aver cercato le cause correggibili dell'INR instabile" + pgs(P45) + ".", true);
       if (mol.gia) h += passo("Già in DOAC: si controlla che la dose stia nei criteri della sua molecola (passo 7).");
       if (mol.sub) h += passo("Nella FA subclinica la IIb B riguarda un DOAC" + pgs(R6) + ".");
@@ -953,28 +1088,30 @@ html.js.motore-ko #nomotore{display:block}
     if (cl.clcr === null || cl.clAgg === null) return out;
     for (k in FASCE) {
       if (!FASCE.hasOwnProperty(k)) continue;
-      a = FASCE[k](arr(cl.clcr)); b = FASCE[k](arr(cl.clAgg));
+      a = FASCE[k](cl.clcr); b = FASCE[k](cl.clAgg);
       if (a !== b) out.push(DOAC[k].nome.toLowerCase() + " (" + a + " sul peso reale, " + b + " sull'aggiustato)");
     }
     return out;
   }
 
   function testoRene(s, rn) {
-    var h = "", cl = rn.cl, x;
+    var h = "", cl = rn.cl, x, u18 = sotto18(s);
     if (s.creatErr) h += nota("stop", s.creatErr);
-    if (rn.dialisi) h += '<div class="esito">' + chip("k4", "dialisi") + '<span class="muted">vale come clearance sotto 15: per nessun DOAC c\'è una dose autorizzata (passo 7)</span></div>';
+    if (rn.dialisi && u18) h += '<div class="esito">' + chip("k4", "dialisi") + '<span class="muted">' + NO_MG + "</span></div>";
+    else if (rn.dialisi) h += '<div class="esito">' + chip("k4", "dialisi") + '<span class="muted">vale come clearance sotto 15: per nessun DOAC c\'è una dose autorizzata (passo 7)</span></div>';
     else if (cl.clcr !== null) {
-      h += '<div class="esito"><span class="big">ClCr ' + nf(cl.clcr, 0) + " mL/min</span>" + chip(kcl(cl.clcr), "Cockcroft-Gault, peso reale " + nf(s.peso) + " kg") + "</div>";
+      h += '<div class="esito"><span class="big">ClCr ' + nfCl(cl.clcr) + " mL/min</span>" + chip(kcl(cl.clcr), "Cockcroft-Gault, peso reale " + nf(s.peso) + " kg") + "</div>";
       if (cl.clAgg !== null) {
-        h += passo("BMI " + nf(cl.bmi) + ": sul peso aggiustato (" + nf(cl.pesoAgg, 0) + " kg; ideale " + nf(cl.ibw, 0) + " kg) la clearance è <b>" + nf(cl.clAgg, 0) + " mL/min</b>. Si mostra accanto, ma decide quella sul peso reale (decisione del medico, 03/10/2026).");
+        h += passo("BMI " + nf(cl.bmi) + ": sul peso aggiustato (" + nf(cl.pesoAgg, 0) + " kg; ideale " + nf(cl.ibw, 0) + " kg) la clearance è <b>" + nfCl(cl.clAgg) + " mL/min</b>. Si mostra accanto, ma decide quella sul peso reale (decisione del medico, 03/10/2026).");
         x = fasceDiverse(cl);
         if (x.length) h += nota("", "<b>Le due clearance cadono ai lati opposti di una soglia</b> per " + x.join("; ") + ": lo strumento usa il peso reale, ma qui la scelta è clinica.");
       } else if (cl.bmi !== null) h += '<div class="muted" style="font-size:12.5px">BMI ' + nf(cl.bmi) + (cl.bmi >= SOGLIE.bmiAgg ? ": il peso non supera l'ideale, nessun peso aggiustato" : "") + ".</div>";
-    } else h += '<div class="esito">' + chip("kx", "ClCr —") + '<span class="muted">mancano: ' + cl.manca.join(", ") + "</span></div>";
-    if (!rn.dialisi) {
+    } else h += '<div class="esito">' + chip("kx", "ClCr —") + '<span class="muted">' + (u18 ? ETA_CG : "mancano: " + cl.manca.join(", ")) + "</span></div>";
+    if (!rn.dialisi && !u18) {
       if (rn.egfr !== null) h += '<div class="esito">' + chip(rn.egfr < SOGLIE.egfr30 ? "k4" : "k1", "eGFR " + nf(rn.egfr, 0)) + '<span class="muted">conta per il dabigatran</span></div>';
       else h += '<div class="esito">' + chip("kx", "eGFR —") + '<span class="muted">senza, il dabigatran non si decide: la fonte lo controindica con eGFR &lt;30</span></div>';
     }
+    if (s.fuori.length) h += nota("stop", "Fuori dal dominio dello strumento, e quindi non usato: " + s.fuori.join("; ") + ".");
     return h;
   }
 
@@ -991,11 +1128,11 @@ html.js.motore-ko #nomotore{display:block}
     if (o.evita) h += nota("", "<b>Da evitare</b> con " + o.inter.ev.join(", ") + ": la Fig. 9 dice di evitarlo quando si può" + pgs(F9) + ".");
     for (i = 0; i < o.inter.righe.length; i++) {
       r = o.inter.righe[i];
-      h += passo("<b>" + r.nome.charAt(0).toUpperCase() + r.nome.slice(1) + "</b>: la Fig. 9 " + (r.f9 ? "dice «" + r.f9 + "»" : "non nomina la coppia") + pgs(F9) + "; scheda tecnica: " + r.st + ".");
+      h += passo("<b>" + r.nome.charAt(0).toUpperCase() + r.nome.slice(1) + "</b>: la Fig. 9 " + (r.f9 ? "dice «" + r.f9 + "»" : "non nomina la coppia") + pgs(F9) + "; scheda tecnica: " + (o.noMg ? r.st.replace(/^[0-9,]+ mg[^(]*/, "riduce la dose ") : r.st) + ".");
     }
-    if (!rn.dialisi && cl.clcr !== null && cl.clAgg !== null && FASCE[o.k](arr(cl.clcr)) !== FASCE[o.k](arr(cl.clAgg)) && o.stato !== "ci" && o.stato !== "nr")
-      h += nota("", "<b>Sul peso aggiustato</b> la ClCr sarebbe " + nf(cl.clAgg, 0) + ", fascia " + FASCE[o.k](arr(cl.clAgg)) + " invece di " + FASCE[o.k](arr(cl.clcr)) + ": lo strumento decide sul peso reale, ma qui la scelta è clinica.");
-    h += passo("Rene: " + reneTx);
+    if (!rn.dialisi && cl.clcr !== null && cl.clAgg !== null && FASCE[o.k](cl.clcr) !== FASCE[o.k](cl.clAgg) && o.stato !== "ci" && o.stato !== "nr")
+      h += nota("", "<b>Sul peso aggiustato</b> la ClCr sarebbe " + nfCl(cl.clAgg) + ", fascia " + FASCE[o.k](cl.clAgg) + " invece di " + FASCE[o.k](cl.clcr) + ": lo strumento decide sul peso reale, ma qui la scelta è clinica.");
+    h += passo("Rene: " + (o.noMg ? "sotto i 18 anni lo strumento non calcola la clearance: la Cockcroft-Gault è una formula dell'adulto." : reneTx));
     return h + "</div>";
   }
 
@@ -1041,6 +1178,7 @@ html.js.motore-ko #nomotore{display:block}
     if (mol.m === "grav") return nota("spenta", "Gravidanza: i DOAC non sono raccomandati" + pgs(P69) + ", e la fonte non dà dosi.");
     if (mol.m === "avk") return nota("spenta", "Con valvola meccanica o stenosi mitralica moderata-severa i DOAC non si usano: <b>nessuna dose di DOAC</b>" + pgs(R7) + ". L'AVK si dosa sull'INR (passo 4).");
     if (mol.m === "nbte") return nota("spenta", "Endocardite trombotica non batterica o sindrome antifosfolipidica trombotica: <b>nessuna dose di DOAC</b> — nessun dato a favore nella NBTE, e il rivaroxaban peggio del warfarin nella sindrome antifosfolipidica" + pgs(E12b) + ". L'AVK si dosa sull'INR (passo 4); le dosi di EBPM ed eparina non frazionata la fonte non le dà, e il loro rene è al passo 4.");
+    if (s.fa === "flutter") h += nota("info", "<b>Flutter senza FA documentata: dosi e rene come nella FA, lettura dello strumento.</b> Le schede tecniche dei quattro DOAC, nell'indicazione, parlano di fibrillazione atriale non valvolare e non nominano il flutter" + pgs("schede tecniche di apixaban, dabigatran, edoxaban e rivaroxaban, § 4.1") + ".");
     if (s.ei) h += nota("info", "<b>Endocardite infettiva</b> (passo 4): le dosi valgono per l'anticoagulante orale che si continua. Con un sanguinamento maggiore si interrompe " + corPill("I", "C") + pgs(E22) + "; senza ictus e con chirurgia probabile si passa all'eparina non frazionata " + corPill("IIa", "C") + pgs(E22) + ", la cui dose la fonte non dà; il suo rene è al passo 4.");
     if (ind.e !== "si" && ind.e !== "subsi") h += nota("info", "<b>" + (ind.e ? "Nessuna indicazione certa" : "Indicazione non ancora decisa") + "</b>: le dosi qui sotto valgono solo se si decide di anticoagulare.");
     if (mol.m === "resta") h += nota("info", "Si può restare all'AVK: le dosi qui sotto valgono se si decide di passare al DOAC.");
@@ -1048,7 +1186,7 @@ html.js.motore-ko #nomotore{display:block}
     for (k in dd) if (dd.hasOwnProperty(k) && (dd[k].stato === "nr" || dd[k].stato === "ci")) esclusi++;
     if (esclusi === 4) h += nota("stop", "<b>Nessun DOAC ha una dose per questo rene.</b> In emodialisi la fonte riporta solo piccoli trial — apixaban 2,5 mg due volte al giorno e rivaroxaban 10 mg contro l'AVK —, senza una raccomandazione" + pgs(P44) + ". La scelta è clinica; il warfarin non chiede aggiustamenti renali, con il rischio di calcifilassi soprattutto in dialisi" + pgs("scheda tecnica di warfarin, § 4.2, 4.4") + ".");
     h += passo("Dose ridotta senza i criteri della sua molecola: <b>no</b> " + corPill("III", "B") + pgs(R7) + " — aumenta gli ictus senza ridurre i sanguinamenti" + pgs(P44) + ".");
-    h += passo("Le soglie di clearance si leggono sul valore arrotondato all'intero, quello mostrato al passo 5.");
+    if (!sotto18(s)) h += passo("Le soglie che escludono, 15 e 30, si leggono sul valore non arrotondato (scelta del medico, 08/11/2026); le altre sul valore arrotondato all'intero, quello mostrato al passo 5.");
     return h;
   }
 
@@ -1057,7 +1195,7 @@ html.js.motore-ko #nomotore{display:block}
     h += passo("Rivalutare il rischio tromboembolico a intervalli: età e malattie cambiano " + corPill("I", "B") + pgs(R6) + ".");
     h += passo("Quando si comincia un DOAC, gli antiaggreganti si sospendono nella maggior parte dei pazienti" + pgs(T11 + ", nota") + "; aggiungerne uno all'anticoagulante per prevenire l'ictus: no " + corPill("III", "B") + pgs(R8) + ".");
     h += passo("Rischio emorragico: valutare e correggere i fattori modificabili in tutti " + corPill("I", "B") + "; i punteggi emorragici non decidono se iniziare o sospendere l'anticoagulante " + corPill("III", "B") + pgs(R12) + ".");
-    if (s.sca) h += nota("info", "<b>SCA o PCI</b>: la terapia con l'antiaggregante ha i suoi strumenti — il <b>Tool Antitrombotici SCA</b> per la fase acuta, il <b>Tool DAPT</b> per fasi e durate dopo la PCI — e la Fig. 14 nella scheda della FA, sezione 12. Durante l'antiaggregante, se prevale il timore del sanguinamento, si possono preferire rivaroxaban 15 mg a 20 mg e dabigatran 110 mg a 150 mg due volte al giorno " + corPill("IIa", "B") + pgs(R24) + ".");
+    if (s.sca) h += nota("info", "<b>SCA o PCI</b>: la terapia con l'antiaggregante ha i suoi strumenti — il <b>Tool Antitrombotici SCA</b> per la fase acuta, il <b>Tool DAPT</b> per fasi e durate dopo la PCI — e la Fig. 14 nella scheda della FA, sezione 12. Durante l'antiaggregante, se prevale il timore del sanguinamento, si possono preferire " + (sotto18(s) ? "la dose più bassa di rivaroxaban e quella di dabigatran " : "rivaroxaban 15 mg a 20 mg e dabigatran 110 mg a 150 mg due volte al giorno ") + corPill("IIa", "B") + pgs(R24) + (sotto18(s) ? "; i mg: —, " + NO_MG : "") + ".");
     else h += passo("Con una SCA o una PCI la terapia con l'antiaggregante ha i suoi strumenti: Tool Antitrombotici SCA e Tool DAPT.");
     h += passo("Il resto — tutta la Fig. 9, i passaggi fra AVK e DOAC, cardioversione, ablazione, sanguinamento — è nella scheda della FA, sezioni 4–7 e 9.");
     return h;
@@ -1071,14 +1209,15 @@ html.js.motore-ko #nomotore{display:block}
     for (i = 0; i < FARMACI.length; i++) { f = FARMACI[i]; if (s[f] && (f === "ciclo" || f === "drone" || f === "eritro" || f === "keto" || f === "itra")) qui.push(INTER[f].nome); }
     var tEdo = doac && qui.length > 0;
     // con la restrittiva (FA clinica) 0 e 1 danno la stessa IIa C: il punto cambia la classe solo da 1
-    var tC = !!s.fa && !s.grav && s.cmp !== "hcm" && !s.pC && p.esatto && (s.cmp === "rcm" && s.fa === "clinica" ? p.tot === 1 : p.tot <= 1);
-    var tR = s.fa === "clinica" && !s.grav && s.cmp === "rcm", tA = s.fa === "clinica" && !s.grav && s.cmp === "altra";
+    var tC = !!s.fa && !s.grav && s.cmp !== "hcm" && !s.pC && p.esatto && (s.cmp === "rcm" && s.fa !== "sub" ? p.tot === 1 : p.tot <= 1);
+    var fl = s.fa === "flutter", cf = s.fa === "clinica" || fl, tab15 = fl ? " Le righe dicono «FA o flutter», la Tab. 15 parla di FA." : "";
+    var tR = cf && !s.grav && s.cmp === "rcm", tA = cf && !s.grav && s.cmp === "altra";
     return inc(tDab, "<b>Dabigatran: eGFR o clearance?</b> Il testo lo controindica con eGFR &lt;30 mL/min/1,73 m²" + pgs(P44) + "; la Tab. 11 scrive il suo criterio renale in clearance della creatinina" + pgs(T11) + ", e la scheda tecnica la controindicazione in ClCr &lt;30 con Cockcroft-Gault" + pgs("scheda tecnica di dabigatran, § 4.2, 4.3") + ". Le due misure non coincidono, soprattutto nell'anziano e ai pesi estremi. Lo strumento prende la lettura più prudente: sotto 30 con l'una o con l'altra, niente dabigatran" +
-        (dab.incoer === true && rn.cl.clcr !== null && rn.egfr !== null ? " — qui ClCr " + nf(rn.cl.clcr, 0) + " ed eGFR " + nf(rn.egfr, 0) + " cadono ai lati opposti di 30" : (dab.incoer === "manca" ? " — qui l'eGFR manca" : "")) + ".") +
-      inc(tEdo, "<b>Edoxaban: Tab. 11 o Fig. 9?</b> La Tab. 11 scende a 30 mg con uno solo fra ciclosporina, dronedarone, eritromicina e ketoconazolo" + pgs(T11) + "; la Fig. 9 con il dronedarone dice «evitare o ridurre la dose», e con ciclosporina, eritromicina, ketoconazolo e itraconazolo «evitare o ridurre» solo se c'è un'altra terapia che interagisce" + pgs(F9) + ". La scheda tecnica, da cui la Tab. 11 dice di prendere le dosi, sta con la Tab. 11: basta uno solo dei quattro, e l'itraconazolo non lo nomina" + pgs("scheda tecnica di edoxaban, § 4.5") + ". Lo strumento segue la Tab. 11" + (tEdo ? " — qui: " + qui.join(", ") : "") + ".") +
+        (dab.incoer === true && rn.cl.clcr !== null && rn.egfr !== null ? " — qui ClCr " + nfCl(rn.cl.clcr) + " ed eGFR " + nf(rn.egfr, 0) + " cadono ai lati opposti di 30" : (dab.incoer === "manca" ? " — qui l'eGFR manca" : "")) + ".") +
+      inc(tEdo, "<b>Edoxaban: Tab. 11 o Fig. 9?</b> La Tab. 11 scende " + (sotto18(s) ? "alla dose ridotta" : "a 30 mg") + " con uno solo fra ciclosporina, dronedarone, eritromicina e ketoconazolo" + pgs(T11) + "; la Fig. 9 con il dronedarone dice «evitare o ridurre la dose», e con ciclosporina, eritromicina, ketoconazolo e itraconazolo «evitare o ridurre» solo se c'è un'altra terapia che interagisce" + pgs(F9) + ". La scheda tecnica, da cui la Tab. 11 dice di prendere le dosi, sta con la Tab. 11: basta uno solo dei quattro, e l'itraconazolo non lo nomina" + pgs("scheda tecnica di edoxaban, § 4.5") + ". Lo strumento segue la Tab. 11" + (tEdo ? " — qui: " + qui.join(", ") : "") + ".") +
       inc(tC, "<b>La C del CHA₂DS₂-VA.</b> Qui è lo scompenso sintomatico a qualunque FE, o una FEVS ≤40% asintomatica" + pgs(T10) + "; lo scompenso ESC 2026 la scrive come scompenso cronico negli stadi B, C e D, e lo stadio B, il pre-scompenso, va oltre la sola FEVS ≤40% asintomatica (scheda dello scompenso, sezione 9). Con un pre-scompenso a FEVS &gt;40% il punto c'è là e non qui. Lo strumento segue la Tab. 10" + (tC ? " — qui un punto in più cambierebbe la classe" : "") + ".") +
-      inc(tR, "<b>Cardiomiopatia restrittiva: «sempre» o IIa C?</b> ESC 2023 sulle cardiomiopatie. La riga dà l'anticoagulante da considerare, IIa C" + pgs(C11b) + "; la Tab. 15 della stessa fonte lo scrive «sempre, se non controindicato», come per la HCM" + pgs(C15) + ", e il testo dice che alla restrittiva e all'amiloidosi si dà una raccomandazione simile a quella della HCM" + pgs(C41) + ". Tutte e tre portano all'anticoagulante: cambia la forza. Lo strumento segue la riga, IIa C, e con CHA₂DS₂-VA ≥2 la I A della 2024.") +
-      inc(tA, "<b>DCM, NDLVC, ARVC: punteggio o «sempre»?</b> ESC 2023 sulle cardiomiopatie. La riga decide col CHA₂DS₂-VASc" + pgs(C11) + "; la Tab. 15 aggiunge «sempre con scompenso o FEVS ridotta»" + pgs(C15) + ". Lo scompenso vale un punto: con quello soltanto si arriva alla IIa (C nella 2024, B nella 2023), non a un «sempre». Lo strumento segue le righe; la Tab. 15 non ha classe.") +
+      inc(tR, "<b>Cardiomiopatia restrittiva: «sempre» o IIa C?</b> ESC 2023 sulle cardiomiopatie. La riga dà l'anticoagulante da considerare, IIa C" + pgs(C11b) + "; la Tab. 15 della stessa fonte lo scrive «sempre, se non controindicato», come per la HCM" + pgs(C15) + ", e il testo dice che alla restrittiva e all'amiloidosi si dà una raccomandazione simile a quella della HCM" + pgs(C41) + ". Tutte e tre portano all'anticoagulante: cambia la forza. Lo strumento segue la riga, IIa C, e con CHA₂DS₂-VA ≥2 " + (fl ? "la I B del flutter" + pgs(R30) : "la I A della 2024") + "." + tab15) +
+      inc(tA, "<b>DCM, NDLVC, ARVC: punteggio o «sempre»?</b> ESC 2023 sulle cardiomiopatie. La riga decide col CHA₂DS₂-VASc" + pgs(C11) + "; la Tab. 15 aggiunge «sempre con scompenso o FEVS ridotta»" + pgs(C15) + ". Lo scompenso vale un punto: con quello soltanto si arriva alla IIa (C nella 2024, B nella 2023), non a un «sempre». Lo strumento segue le righe; la Tab. 15 non ha classe." + tab15) +
       (s.ei ? inc(true, "<b>Endocardite: quale eparina?</b> ESC 2023 sull'endocardite. Il testo chiede presto un ponte con eparina a basso peso molecolare o non frazionata al posto dell'anticoagulante orale, soprattutto se la chirurgia è indicata" + pgs(E1211) + "; la riga della Rec. Table 22 nomina la sola non frazionata" + pgs(E22) + ". E il testo dice «raccomandata» la prosecuzione dell'anticoagulante con un'indicazione preesistente" + pgs(E91) + ", ma nessuna riga la gradua: la classe non c'è. Lo strumento segue la riga, eparina non frazionata.") +
         inc(true, "<b>Endocardite: l'eparina dopo un sanguinamento cerebrale?</b> Incoerenza della fonte, ESC 2023 sull'endocardite. Con un sanguinamento cerebrale il testo preferisce passare dall'anticoagulante orale all'eparina" + pgs(E91) + "; la Rec. Table 22 invece, con un'emorragia intracranica, interrompe l'anticoagulante " + corPill("I", "C") + " e fa ripartire l'eparina non frazionata solo con una valvola meccanica " + corPill("IIa", "C") + pgs(E22) + " — quella ripresa sta nel Tool INR. Senza valvola meccanica, dopo un'emorragia intracranica la tabella non dà una ripresa, e il testo non dice se parla di un sanguinamento minore. Lo strumento segue la tabella: si interrompe.") : "");
   }
@@ -1096,6 +1235,8 @@ html.js.motore-ko #nomotore{display:block}
     el("creat").setAttribute("placeholder", s.ucr === "umol" ? "µmol/L" : "mg/dL");
     el("crConv").innerHTML = s.creat === null ? "" : (s.ucr === "umol" ? "= " + (s.creat / UMOL).toFixed(2).replace(".", ",") + " mg/dL" : "= " + Math.round(s.creat * UMOL) + " µmol/L");
 
+    el("rigaEta").innerHTML = sotto18(s) ? nota("stop", RIGA_18) : "";
+    el("rigaEta").className = sotto18(s) ? "" : "hide";
     var dd = { api:apixaban(s, rn), dabi:dabigatran(s, rn), edo:edoxaban(s, rn), riva:rivaroxaban(s, rn) };
     el("outPunti").innerHTML = testoPunti(s, p);
     el("outInd").innerHTML = testoInd(s, p, ind);
@@ -1111,8 +1252,12 @@ html.js.motore-ko #nomotore{display:block}
     lim.push("Il rischio emorragico lo valuta chi compila: nella FA clinica non serve a negare l'anticoagulante, si correggono i fattori modificabili (Rec. Table 12, p. 3348; scheda della FA, sezione 7).");
     lim.push("Clearance di Cockcroft-Gault sul peso reale, che decide (decisione del medico, 03/10/2026: il peso reale lo chiede l'etichetta FDA di rivaroxaban; le schede tecniche europee lette non dicono quale peso); con BMI ≥30 accanto il valore sul peso aggiustato (peso ideale di Devine + 0,4 × l'eccesso). Il Tool EP durata e il Tool Antitrombotici SCA, per altre indicazioni, usano il peso aggiustato.");
     if (rn.cl.clcr !== null && s.alt === null) lim.push("Altezza non indicata: il BMI non si calcola, e il valore sul peso aggiustato non compare; nell'obeso il peso reale dà la clearance più alta.");
-    lim.push("Le soglie si leggono sulla clearance arrotondata all'intero: 49,6 vale 50, e il rivaroxaban resta a 20 mg (15–49), mentre l'edoxaban scende a 30 (15–50).");
+    if (sotto18(s)) lim.push("Età sotto i 18 anni: la clearance non si calcola, e nemmeno i mg delle dosi dell'adulto; strada e classi sono quelle dell'adulto, e nel testo della ESC 2024 non compaiono bambini né adolescenti.");
+    else if (s.etaFuori) lim.push("Età fuori scala (18–110 anni): la clearance non si calcola.");
+    if (s.fuori.length) lim.push("Valori fuori dal dominio, non usati: " + s.fuori.join("; ") + ".");
+    if (!sotto18(s)) lim.push("Le soglie che escludono, 15 e 30, si leggono sul valore non arrotondato, e il numero vicino si scrive col decimale: con 14,6 nessun DOAC, con 29,6 niente dabigatran (scelta del medico, 08/11/2026). Le altre sulla clearance arrotondata all'intero: 49,6 vale 50, e il rivaroxaban resta a 20 mg (15–49), mentre l'edoxaban scende a 30 (15–50); per la dose ridotta dell'apixaban 29,6 vale 30.");
     lim.push("Le interazioni sono solo quelle dei sette farmaci del passo 6; il resto della Fig. 9 è nella scheda della FA, sezione 5.6.");
+    if (s.fa === "flutter") lim.push("Flutter senza FA documentata: punteggio, molecola, dosi e rene sono quelli della FA, lettura dello strumento (ESC 2024, § 9.14, p. 3371); le schede tecniche dei DOAC parlano di FA non valvolare (§ 4.1). La IIa C a 1 punto è anch'essa una lettura dello strumento (Rec. Table 6, p. 3342; ESC 2019 TSV, p. 679).");
     if (s.fa === "sub") lim.push("Per la FA subclinica la fonte non dà una soglia di «rischio alto»: lo strumento usa l'indicatore della Rec. Table 6 (CHA₂DS₂-VA ≥2).");
     if (s.cmp === "rcm" || s.cmp === "altra") lim.push("Restrittiva, dilatativa, NDLVC e ARVC vengono dalla ESC 2023 sulle cardiomiopatie (Rec. Table 11, pp. 3543–3544), che usa ancora il CHA₂DS₂-VASc; molecola, dose e rene restano quelli della FA ESC 2024: nelle cardiomiopatie non c'è un confronto randomizzato fra DOAC e AVK, e i dati suggeriscono di usarli come nella popolazione generale (ESC 2023, p. 3541).");
     if (s.ei) lim.push("Endocardite infettiva (ESC 2023): lo strumento non chiede se c'è un sanguinamento maggiore, un ictus o una chirurgia probabile, e mostra i rami ciascuno con la sua condizione; la dose dell'eparina non frazionata non è nella fonte, e fra DOAC e AVK la ESC 2023 non sceglie. «In corso o recente»: per «recente» la fonte non dà un tempo.");
@@ -1124,10 +1269,12 @@ html.js.motore-ko #nomotore{display:block}
     bar("barPunti", (p.etaNota || p.tot) ? kPunti(p.tot) : "kx", (p.etaNota || p.tot) ? (p.esatto ? String(p.tot) : "≥" + p.tot) : "—");
     var bi = { si:["k1", "raccomandato"], forse:["k2", "da considerare"], zero:["k0", "non dal punteggio"], subsi:["k2", "DOAC da considerare"], sub1:["kx", "scelta clinica"],
                subzero:["k0", "non dal punteggio"], subno:["k3", "DOAC non indicato"], grav:["k4", "gravidanza"] }[ind.e] || ["kx", "—"];
+    // Flutter a 0 punti: niente verde. Senza FA la ESC 2019 dice di considerarlo, con la soglia non stabilita, IIa C (p. 679). Ricontrollo indipendente, 08/11/2026.
+    if (ind.e === "zero" && ind.via === "flutter") bi = ["kx", "non dal punteggio"];
     bar("barInd", bi[0], bi[1]);
     var bm = { avk:["k3", "AVK"], nbte:["k3", "AVK o eparina"], doac:["k1", "DOAC"], doacoavk:["k1", "DOAC, o AVK in range"], resta:["k2", "AVK, si può restare"], grav:["kx", "—"] }[mol.m] || ["kx", "—"];
     bar("barMol", bm[0], bm[1]);
-    bar("barRene", rn.dialisi ? "k4" : (rn.cl.clcr !== null ? kcl(rn.cl.clcr) : "kx"), rn.dialisi ? "dialisi" : (rn.cl.clcr !== null ? "ClCr " + nf(rn.cl.clcr, 0) : "—"));
+    bar("barRene", rn.dialisi ? "k4" : (rn.cl.clcr !== null ? kcl(rn.cl.clcr) : "kx"), rn.dialisi ? "dialisi" : (rn.cl.clcr !== null ? "ClCr " + nfCl(rn.cl.clcr) : "—"));
   }
 
   document.addEventListener("input", disegna);
